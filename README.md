@@ -1,15 +1,12 @@
 # Aviation
 
-App iOS (SwiftUI) que busca aeropuertos con la API de [Aviationstack](https://aviationstack.com).
+App iOS (SwiftUI) que busca aeropuertos en una lista local.
 
-## API
-Plan gratuito de Aviationstack, que solo sirve HTTP: la base es `http://api.aviationstack.com/v1` y `project.yml` añade una excepción de ATS limitada a `api.aviationstack.com`.
+## Lista de aeropuertos
+La búsqueda no usa red: lee `Aviation/Data/airports.json`, incluido en la app. Se generó el 2026-11-19 a partir de [OurAirports](https://ourairports.com/data/) (dominio público) con este filtro: `iata_code` no vacío, `type` en `large_airport`, `medium_airport` o `small_airport`, y `scheduled_service = yes`. Son 4007 aeropuertos (un JSON compacto `{n, c, i, k}`: nombre, ciudad, IATA y país ISO). El país se muestra en español con `Locale`.
 
-## Clave de la API
-1. Copia `Config/Secrets.example.xcconfig` a `Config/Secrets.xcconfig` (está en `.gitignore`).
-2. Pon tu clave en `AVIATIONSTACK_ACCESS_KEY`. Se pasa al Info.plist (`AviationstackAccessKey`) y se lee con `Bundle.main`.
-
-Sin clave la app compila, pero la API responderá con error. Los tests no la necesitan.
+## Clave de Aviationstack
+La clave solo hará falta para los vuelos (historia #3); el plan gratuito no permite consultar aeropuertos. Para tenerla preparada: copia `Config/Secrets.example.xcconfig` a `Config/Secrets.xcconfig` (está en `.gitignore`) y pon tu clave en `AVIATIONSTACK_ACCESS_KEY`. Se pasa al Info.plist (`AviationstackAccessKey`). Sin clave la app compila y busca aeropuertos igual.
 
 ## Ejecutar y probar
 ```
@@ -22,9 +19,9 @@ El `.xcodeproj` no está en git: se genera desde `project.yml`.
 
 ## Arquitectura
 Un solo target con tres carpetas:
-- `Data`: `AviationstackClient` (HTTP, decodificación, `APIError`).
-- `Domain`: `Airport`, `AirportRepository`, `SearchAirportsUseCase` (recorta el texto y exige 3 caracteres).
+- `Data`: `LocalAirportRepository` (lee y filtra la lista, sin distinguir mayúsculas ni acentos; primero el código IATA exacto, máximo 50 resultados) y `airports.json`.
+- `Domain`: `Airport`, `AirportRepository`, `SearchAirportsUseCase` (recorta el texto y exige 3 caracteres) y `APIError`.
 - `Presentation`: `SearchViewModel` (estados idle / loading / loaded / empty / failed) y las vistas.
 
 ## Cancelación
-`SearchView` lanza la búsqueda en `.task(id: query)`: cada cambio de texto cancela la tarea anterior. La tarea espera 300 ms (`Task.sleep`, debounce) antes de buscar. Si la petición ya estaba en curso, `SearchViewModel` comprueba `Task.isCancelled` tras el `await` y no escribe estado, así que nunca se muestran resultados de una búsqueda antigua.
+`SearchView` lanza la búsqueda en `.task(id: query)`: cada cambio de texto cancela la tarea anterior. La tarea espera 300 ms (`Task.sleep`, debounce) antes de buscar. Si la búsqueda ya estaba en curso, `SearchViewModel` comprueba `Task.isCancelled` tras el `await` y no escribe estado, así que nunca se muestran resultados de una búsqueda antigua.
