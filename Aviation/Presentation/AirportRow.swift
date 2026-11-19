@@ -24,10 +24,10 @@ struct AirportRow: View {
             }
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(airport.name), \(spelledCode), \(airport.country)")
-    }
-    
-    private var spelledCode: String {
-        airport.iataCode.map(String.init).joined(separator: " ")
+        // Natural order (name, code, country); the code is spelled out by the system, not by hand.
+        .accessibilityLabel(
+            Text(
+                "\(airport.name), \(Text(airport.iataCode).speechSpellsOutCharacters()), \(airport.country)"
+            ))
     }
 }

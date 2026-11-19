@@ -1,7 +1,19 @@
 {
   "sourceLanguage" : "es",
   "strings" : {
-    "%lld aeropuertos encontrados" : { "extractionState" : "manual" },
+    "%lld aeropuertos encontrados" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld aeropuerto encontrado" } },
+              "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld aeropuertos encontrados" } }
+            }
+          }
+        }
+      }
+    },
     "Aeropuertos" : { "extractionState" : "manual" },
     "Busca un aeropuerto" : { "extractionState" : "manual" },
     "Buscando…" : { "extractionState" : "manual" },
