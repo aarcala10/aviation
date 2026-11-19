@@ -1,0 +1,69 @@
+{
+  "sourceLanguage" : "es",
+  "strings" : {
+    "%@, %@, %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@, %3$@"
+          }
+        }
+      }
+    },
+    "%lld aeropuertos encontrados" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld aeropuerto encontrado"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld aeropuertos encontrados"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Aeropuertos" : {
+      "extractionState" : "manual"
+    },
+    "Busca un aeropuerto" : {
+      "extractionState" : "manual"
+    },
+    "Buscando…" : {
+      "extractionState" : "manual"
+    },
+    "Buscar aeropuerto" : {
+      "extractionState" : "manual"
+    },
+    "Comprueba tu conexión" : {
+      "extractionState" : "manual"
+    },
+    "Error en la búsqueda" : {
+      "extractionState" : "manual"
+    },
+    "Escribe un nombre, una ciudad o un código IATA" : {
+      "extractionState" : "manual"
+    },
+    "La clave de la API no es válida" : {
+      "extractionState" : "manual"
+    },
+    "No se ha podido completar la búsqueda" : {
+      "extractionState" : "manual"
+    },
+    "Se ha agotado la cuota de la API" : {
+      "extractionState" : "manual"
+    }
+  },
+  "version" : "1.0"
+}
