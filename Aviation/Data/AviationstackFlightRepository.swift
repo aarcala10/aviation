@@ -1,6 +1,6 @@
 import Foundation
 
-struct AviationstackFlightRepository: FlightRepository {
+actor AviationstackFlightRepository: FlightRepository {
     typealias Transport = @Sendable (URLRequest) async throws -> Data
     
     private struct Response: Decodable {
@@ -39,9 +39,18 @@ struct AviationstackFlightRepository: FlightRepository {
     let accessKey: String
     let transport: Transport
     
+    init(accessKey: String, transport: @escaping Transport) {
+        self.accessKey = accessKey
+        self.transport = transport
+    }
+    
     /// A real `URLSession` transport.
-    static func live(accessKey: String, session: URLSession = .shared) -> Self {
-        Self(accessKey: accessKey) { request in try await session.data(for: request).0 }
+    static func live(accessKey: String, session: URLSession = .shared)
+        -> AviationstackFlightRepository
+    {
+        AviationstackFlightRepository(accessKey: accessKey) { request in
+            try await session.data(for: request).0
+        }
     }
     
     func departures(from iata: String, limit: Int, offset: Int) async throws -> [Flight] {

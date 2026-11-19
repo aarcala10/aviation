@@ -1,4 +1,4 @@
-struct GetDeparturesUseCase: Sendable {
+nonisolated struct GetDeparturesUseCase: Sendable {
     static let pageSize = 100
     
     let repository: any FlightRepository

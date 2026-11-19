@@ -1,7 +1,7 @@
 import Foundation
 import Observation
 
-@MainActor @Observable
+@Observable
 final class SearchViewModel {
     enum State: Equatable {
         case idle, loading

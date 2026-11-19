@@ -1,6 +1,7 @@
 import XCTest
 
 final class FlightsUITests: UIBase {
+    @MainActor
     func testSearchAndOpenAirportShowsDepartures() {
         let search = app.searchFields.firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 5))

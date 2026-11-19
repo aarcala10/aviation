@@ -3,7 +3,6 @@ import Testing
 
 @testable import Aviation
 
-@MainActor
 struct FlightsViewModelTests {
     private func makeVM(_ repo: MockFlightRepository) -> FlightsViewModel {
         FlightsViewModel(airport: .madrid, getDepartures: GetDeparturesUseCase(repository: repo))

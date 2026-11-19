@@ -1,7 +1,7 @@
 import Foundation
 
 /// Searches a bundled airport list (JSON array of {n: name, c: city, i: IATA, k: ISO country}).
-struct LocalAirportRepository: AirportRepository {
+actor LocalAirportRepository: AirportRepository {
     /// A 3-letter query can match hundreds of airports; the list only needs the best ones.
     private static let maxResults = 50
     

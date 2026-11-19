@@ -1,6 +1,6 @@
 import Observation
 
-@MainActor @Observable
+@Observable
 final class FlightsViewModel {
     enum State: Equatable {
         case idle, loading

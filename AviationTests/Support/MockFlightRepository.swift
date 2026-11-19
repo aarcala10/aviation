@@ -22,7 +22,7 @@ actor MockFlightRepository: FlightRepository {
 }
 
 extension Flight {
-    static func sample(
+    nonisolated static func sample(
         number: String = "AZ59", status: FlightStatus = .scheduled, delay: Int = 0,
         isCodeshare: Bool = false
     ) -> Flight {

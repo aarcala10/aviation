@@ -1,8 +1,8 @@
-enum FlightStatus: String, Equatable, Sendable {
+nonisolated enum FlightStatus: String, Equatable, Sendable {
     case scheduled, active, landed, cancelled, incident, diverted, delayed, unknown
 }
 
-struct Flight: Equatable, Sendable, Identifiable {
+nonisolated struct Flight: Equatable, Sendable, Identifiable {
     let number: String
     let airline: String
     let destinationIATA: String
@@ -20,6 +20,6 @@ struct Flight: Equatable, Sendable, Identifiable {
     }
 }
 
-protocol FlightRepository: Sendable {
+nonisolated protocol FlightRepository: Sendable {
     func departures(from iata: String, limit: Int, offset: Int) async throws -> [Flight]
 }

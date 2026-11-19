@@ -1,6 +1,6 @@
 import Foundation
 
-struct SearchAirportsUseCase: Sendable {
+nonisolated struct SearchAirportsUseCase: Sendable {
     /// An IATA code has 3 letters; shorter queries would waste API quota.
     static let minimumLength = 3
     
