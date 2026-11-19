@@ -14,7 +14,10 @@ struct Flight: Equatable, Sendable, Identifiable {
     let isCodeshare: Bool
     var id: String { number }
     
-    var status: FlightStatus { reportedStatus }
+    var status: FlightStatus {
+        let canBeDelayed = reportedStatus == .scheduled || reportedStatus == .active
+        return canBeDelayed && delayMinutes > 0 ? .delayed : reportedStatus
+    }
 }
 
 protocol FlightRepository: Sendable {

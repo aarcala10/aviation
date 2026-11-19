@@ -37,6 +37,21 @@
     "Aeropuertos" : {
       "extractionState" : "manual"
     },
+    "Aterrizado" : { "extractionState" : "manual" },
+    "Cancelado" : { "extractionState" : "manual" },
+    "Cargando salidas…" : { "extractionState" : "manual" },
+    "Desconocido" : { "extractionState" : "manual" },
+    "Desviado" : { "extractionState" : "manual" },
+    "En vuelo" : { "extractionState" : "manual" },
+    "Error al cargar las salidas" : { "extractionState" : "manual" },
+    "Incidente" : { "extractionState" : "manual" },
+    "No hay salidas" : { "extractionState" : "manual" },
+    "No se han podido cargar las salidas" : { "extractionState" : "manual" },
+    "Programado" : { "extractionState" : "manual" },
+    "Reintentar" : { "extractionState" : "manual" },
+    "Retrasado" : { "extractionState" : "manual" },
+    "Salidas de %@" : { "extractionState" : "manual" },
+    "Vuelo %@, %@, a %@ %@, %@, %@" : { "extractionState" : "manual" },
     "Busca un aeropuerto" : {
       "extractionState" : "manual"
     },

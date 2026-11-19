@@ -18,5 +18,17 @@ final class FlightsViewModel {
         self.getDepartures = getDepartures
     }
     
-    func load() async {}
+    func load() async {
+        state = .loading
+        do {
+            let flights = try await getDepartures(from: airport.iataCode)
+            guard !Task.isCancelled else { return }
+            state = flights.isEmpty ? .empty : .loaded(flights)
+        } catch {
+            guard !Task.isCancelled else { return }
+            state = .failed(
+                SearchViewModel.message(
+                    for: error, generic: String(localized: "No se han podido cargar las salidas")))
+        }
+    }
 }

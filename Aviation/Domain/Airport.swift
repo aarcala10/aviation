@@ -1,4 +1,4 @@
-struct Airport: Equatable, Sendable, Identifiable {
+struct Airport: Hashable, Sendable, Identifiable {
     let name: String
     let iataCode: String
     let country: String
