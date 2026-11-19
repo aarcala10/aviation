@@ -4,12 +4,17 @@ struct StatusBadge: View {
     let status: FlightStatus
     
     var body: some View {
-        Label(title, systemImage: symbol)
-            .font(.caption.weight(.semibold))
-            .foregroundStyle(color)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
-            .background(color.opacity(0.15), in: .capsule)
+        // Text in .primary: the status colours on their own 15 % tint fall below 4.5:1.
+        // The colour stays on the symbol and the capsule; the text names the status.
+        Label {
+            Text(title)
+        } icon: {
+            Image(systemName: symbol).foregroundStyle(color)
+        }
+        .font(.caption.weight(.semibold))
+        .padding(.horizontal, 8)
+        .padding(.vertical, 4)
+        .background(color.opacity(0.15), in: .capsule)
     }
     
     var title: String {
