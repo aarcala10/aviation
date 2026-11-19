@@ -1,0 +1,162 @@
+{
+  "pagination": {
+    "limit": 2,
+    "offset": 0,
+    "count": 2,
+    "total": 5333
+  },
+  "data": [
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T05:55:00+00:00",
+        "estimated": "2026-11-20T05:55:00+00:00",
+        "actual": null,
+        "estimated_runway": "2026-11-20T05:55:00+00:00",
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "baggage": "22",
+        "scheduled": "2026-11-20T08:15:00+00:00",
+        "delay": null,
+        "estimated": null,
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Volotea",
+        "iata": "V7",
+        "icao": "VOE"
+      },
+      "flight": {
+        "number": "6135",
+        "iata": "V76135",
+        "icao": "VOE6135",
+        "codeshared": {
+          "airline_name": "ita airways",
+          "airline_iata": "az",
+          "airline_icao": "ity",
+          "flight_number": "59",
+          "flight_iata": "az59",
+          "flight_icao": "ity59"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T05:55:00+00:00",
+        "estimated": "2026-11-20T05:55:00+00:00",
+        "actual": null,
+        "estimated_runway": "2026-11-20T05:55:00+00:00",
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "baggage": "22",
+        "scheduled": "2026-11-20T08:15:00+00:00",
+        "delay": null,
+        "estimated": null,
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Saudia",
+        "iata": "SV",
+        "icao": "SVA"
+      },
+      "flight": {
+        "number": "6734",
+        "iata": "SV6734",
+        "icao": "SVA6734",
+        "codeshared": {
+          "airline_name": "ita airways",
+          "airline_iata": "az",
+          "airline_icao": "ity",
+          "flight_number": "59",
+          "flight_iata": "az59",
+          "flight_icao": "ity59"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "1",
+        "gate": null,
+        "delay": 25,
+        "scheduled": "2026-11-20T06:10:00+00:00",
+        "estimated": "2026-11-20T06:35:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "baggage": null,
+        "scheduled": "2026-11-20T08:30:00+00:00",
+        "delay": null,
+        "estimated": null,
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "ITA Airways",
+        "iata": "AZ",
+        "icao": "ITY"
+      },
+      "flight": {
+        "number": "59",
+        "iata": "AZ59",
+        "icao": "ITY59",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    }
+  ]
+}
