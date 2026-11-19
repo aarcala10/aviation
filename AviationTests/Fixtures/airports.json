@@ -1,0 +1,19 @@
+{
+  "pagination": { "limit": 100, "offset": 0, "count": 2, "total": 2 },
+  "data": [
+    {
+      "id": "3299", "gmt": "1", "airport_id": "3299", "iata_code": "MAD",
+      "city_iata_code": "MAD", "icao_code": "LEMD", "country_iso2": "ES",
+      "geoname_id": "6697782", "latitude": "40.4719", "longitude": "-3.56264",
+      "airport_name": "Adolfo Suarez Madrid-Barajas", "country_name": "Spain",
+      "phone_number": null, "timezone": "Europe/Madrid"
+    },
+    {
+      "id": "1055", "gmt": "1", "airport_id": "1055", "iata_code": "BCN",
+      "city_iata_code": "BCN", "icao_code": "LEBL", "country_iso2": "ES",
+      "geoname_id": "6697824", "latitude": "41.2971", "longitude": "2.07846",
+      "airport_name": "Barcelona El Prat", "country_name": "Spain",
+      "phone_number": null, "timezone": "Europe/Madrid"
+    }
+  ]
+}

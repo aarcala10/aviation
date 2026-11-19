@@ -1,0 +1,8 @@
+*.xcodeproj
+Config/Secrets.xcconfig
+.codegraph/
+build/
+DerivedData/
+.DS_Store
+*.xcresult
+Config/Info.plist
