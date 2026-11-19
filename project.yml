@@ -1,5 +1,6 @@
 name: Aviation
 options:
+  developmentLanguage: es
   bundleIdPrefix: com.aarcala10
   deploymentTarget:
     iOS: "26.0"
