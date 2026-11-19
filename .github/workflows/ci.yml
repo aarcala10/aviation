@@ -16,4 +16,4 @@ jobs:
       - run: >
           xcodebuild test -scheme Aviation
           -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
-          -only-testing:AviationTests CODE_SIGNING_ALLOWED=NO
+          CODE_SIGNING_ALLOWED=NO

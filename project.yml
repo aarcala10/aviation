@@ -35,10 +35,20 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.aarcala10.AviationTests
         GENERATE_INFOPLIST_FILE: YES
+  AviationUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [AviationUITests]
+    dependencies:
+      - target: Aviation
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.aarcala10.AviationUITests
+        GENERATE_INFOPLIST_FILE: YES
 schemes:
   Aviation:
     build:
       targets:
         Aviation: all
     test:
-      targets: [AviationTests]
+      targets: [AviationTests, AviationUITests]

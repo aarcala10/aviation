@@ -10,7 +10,7 @@ iOS SwiftUI app that searches airports and their departing flights with the Avia
 - iOS: . (project.yml, xcodegen)   # test: xcodebuild test -scheme Aviation -destination 'platform=iOS Simulator,name=iPhone 17 Pro' -only-testing:AviationTests/<Suite>/<test>
 - Git: GitHub (https://github.com/aarcala10/aviation), rama main; PR por historia, CI de GitHub Actions con tests obligatorios antes de mergear
 - Repos: ninguno (todo se commitea en la raíz)
-- Tests iOS: unitarios AviationTests, UI ninguno, dobles AviationTests/Support/
+- Tests iOS: unitarios AviationTests, UI AviationUITests (solo flujo crítico, camino feliz), dobles AviationTests/Support/
 - Esquemas: ninguno
 - Modelos auto-story: orquesta Opus 5.5; `ios-agent` con `model: "sonnet"` (Sonnet 5.5) para programar; formato con Haiku.
 
@@ -18,3 +18,4 @@ iOS SwiftUI app that searches airports and their departing flights with the Avia
 - **Tests por capa, en todas las historias:** Domain (casos de uso con repositorios mock), Data (comportamiento de la caché, uso y expiración, cuando la historia tenga caché; si no, lo que tenga su capa Data) y Presentation (ViewModels). Si una historia no tiene alguna capa (p. ej. la #4 sin Data), el plan lo dice en una línea.
 - **TDD por lotes:** en rojo se escriben todos los tests de la historia de una vez; en verde se implementa todo y se ejecuta la suite completa una sola vez, corrigiendo hasta que esté verde. Nada de ciclos test → probar → test → probar.
 - **Diseño:** toda pantalla sigue `docs/design.md` (generado con `ui-ux-pro-max`). El briefing de `ios-agent` y de `swiftui-a11y-refactorer` lo incluye, y su checklist forma parte del "Hecho cuando".
+- **Archivo de planes:** al cerrar una historia, su `plan.md` se mueve a `docs/plans/plan<n>.md` (n = número de la historia, p. ej. `plan1.md`). De momento `docs/plans/` va en `.gitignore` (no se commitea).
