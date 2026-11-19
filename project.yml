@@ -22,10 +22,6 @@ targets:
         CFBundleDisplayName: Aviation
         UILaunchScreen: {}
         AviationstackAccessKey: $(AVIATIONSTACK_ACCESS_KEY)
-        NSAppTransportSecurity:
-          NSExceptionDomains:
-            api.aviationstack.com:
-              NSExceptionAllowsInsecureHTTPLoads: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.aarcala10.Aviation

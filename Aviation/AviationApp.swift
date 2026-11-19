@@ -5,10 +5,9 @@ struct AviationApp: App {
     private let viewModel: SearchViewModel
     
     init() {
-        let key =
-            Bundle.main.object(forInfoDictionaryKey: "AviationstackAccessKey") as? String ?? ""
-        let client = AviationstackClient(accessKey: key)
-        viewModel = SearchViewModel(searchAirports: SearchAirportsUseCase(repository: client))
+        // RED placeholder: green loads the bundled airport list.
+        let repository = try! LocalAirportRepository(data: Data())
+        viewModel = SearchViewModel(searchAirports: SearchAirportsUseCase(repository: repository))
     }
     
     var body: some Scene {
