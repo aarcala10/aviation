@@ -1,6 +1,6 @@
 import XCTest
 
-class UIBase: XCTestCase {
+nonisolated class UIBase: XCTestCase {
     @MainActor var app: XCUIApplication!
     
     @MainActor

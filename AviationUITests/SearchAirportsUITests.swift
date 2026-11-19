@@ -1,6 +1,6 @@
 import XCTest
 
-final class SearchAirportsUITests: UIBase {
+nonisolated final class SearchAirportsUITests: UIBase {
     @MainActor
     func testSearchingMadShowsMadridBarajas() {
         let search = app.searchFields.firstMatch

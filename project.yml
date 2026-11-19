@@ -45,8 +45,6 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.aarcala10.AviationUITests
-        # XCTestCase's init is nonisolated: the test classes stay nonisolated, their members are @MainActor.
-        SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
         GENERATE_INFOPLIST_FILE: YES
 schemes:
   Aviation:
