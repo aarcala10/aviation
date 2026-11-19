@@ -3,11 +3,11 @@ import Testing
 @testable import Aviation
 
 struct GetDeparturesUseCaseTests {
-    @Test("departures_requestsFirstPageOfTwenty")
-    func departures_requestsFirstPageOfTwenty() async throws {
+    @Test("departures_requestsFirstPageOfHundred")
+    func departures_requestsFirstPageOfHundred() async throws {
         let repo = MockFlightRepository()
         _ = try await GetDeparturesUseCase(repository: repo)(from: "MAD")
-        #expect(await repo.calls == [.init(iata: "MAD", limit: 20, offset: 0)])
+        #expect(await repo.calls == [.init(iata: "MAD", limit: 100, offset: 0)])
     }
     
     @Test("departures_skipsCodeshares")

@@ -1,5 +1,5 @@
 struct GetDeparturesUseCase: Sendable {
-    static let pageSize = 20
+    static let pageSize = 100
     
     let repository: any FlightRepository
     

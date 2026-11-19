@@ -9,7 +9,7 @@ La búsqueda no usa red: lee `Aviation/Data/airports.json`, incluido en la app. 
 La clave solo hará falta para los vuelos (historia #3); el plan gratuito no permite consultar aeropuertos. Para tenerla preparada: copia `Config/Secrets.example.xcconfig` a `Config/Secrets.xcconfig` (está en `.gitignore`) y pon tu clave en `AVIATIONSTACK_ACCESS_KEY`. Se pasa al Info.plist (`AviationstackAccessKey`). Sin clave la app compila y busca aeropuertos igual.
 
 ## Salidas de un aeropuerto
-Al tocar un aeropuerto se piden sus salidas a `GET https://api.aviationstack.com/v1/flights?dep_iata=XXX&limit=20&offset=0` (solo la primera página). La hora de salida se muestra tal cual llega (HH:mm): la API manda la hora local del aeropuerto con un falso `+00:00`, así que no se convierte a ninguna zona horaria. Los vuelos con `flight.codeshared` no nulo (códigos compartidos) se ocultan para no repetir el vuelo operado.
+Al tocar un aeropuerto se piden sus salidas a `GET https://api.aviationstack.com/v1/flights?dep_iata=XXX&limit=100&offset=0` (solo la primera página). La hora de salida se muestra tal cual llega (HH:mm): la API manda la hora local del aeropuerto con un falso `+00:00`, así que no se convierte a ninguna zona horaria. Los vuelos con `flight.codeshared` no nulo (códigos compartidos) se ocultan para no repetir el vuelo operado.
 
 ## Ejecutar y probar
 ```
