@@ -1,3 +1,4 @@
+import SwiftData
 import SwiftUI
 
 @main
@@ -13,9 +14,11 @@ struct AviationApp: App {
                     ?? UnavailableAirportRepository()))
         // Without a key the request fails with an API error and the flights screen shows it.
         let key = Bundle.main.object(forInfoDictionaryKey: "AviationstackAccessKey") as? String
-        getDepartures = GetDeparturesUseCase(
-            repository: AviationstackFlightRepository.live(accessKey: key ?? ""),
-            cities: local)
+        let live = AviationstackFlightRepository.live(accessKey: key ?? "")
+        let flights = CachedFlightRepository.wrapping(live) {
+            try ModelContainer(for: CachedDepartures.self)
+        }
+        getDepartures = GetDeparturesUseCase(repository: flights, cities: local)
     }
     
     var body: some Scene {

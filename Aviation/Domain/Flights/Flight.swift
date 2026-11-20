@@ -1,8 +1,8 @@
-nonisolated enum FlightStatus: String, Equatable, Sendable {
+nonisolated enum FlightStatus: String, Equatable, Sendable, Codable {
     case scheduled, active, landed, cancelled, incident, diverted, delayed, unknown
 }
 
-nonisolated struct Flight: Equatable, Sendable, Identifiable {
+nonisolated struct Flight: Equatable, Sendable, Identifiable, Codable {
     let number: String
     let airline: String
     let destinationIATA: String
