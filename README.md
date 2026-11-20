@@ -14,6 +14,8 @@ Al tocar un aeropuerto se piden sus salidas a `GET https://api.aviationstack.com
 ## Caché de vuelos
 `Data/Flights/CachedFlightRepository` envuelve al repositorio de Aviationstack y guarda las salidas en disco con SwiftData (`CachedDepartures`). Hay una entrada por petición (clave `IATA-limit-offset`) y vale 5 minutos; con 5 minutos exactos ya cuenta como caducada y se pide de nuevo, sustituyendo la entrada anterior. Sobrevive a cerrar la app. Los errores no se guardan, y una entrada ilegible se ignora y se pide a la red. Si el almacén no se puede abrir, `AviationApp` usa el repositorio real sin caché.
 
+`CachedFlightRepository` no usa la macro `@ModelActor`: conforma `ModelActor` a mano (las dos propiedades `modelContainer` y `modelExecutor` y su `init`, lo mismo que genera la macro). La macro solo genera `init(modelContainer:)`, que no da valor a las otras dos propiedades del actor (el repositorio real y el reloj, inyectado para que los tests controlen el tiempo), y no compila aunque se añada un `init` propio. El `ModelContainer` no sirve para pasarlas: solo describe el almacén (modelos y archivo). La alternativa con la macro sería separar un `@ModelActor` que solo lea y guarde en disco de un `CachedFlightRepository` normal que decida con el TTL; se descartó porque añade un tipo para ahorrar tres líneas.
+
 ## Ejecutar y probar
 ```
 brew install xcodegen
