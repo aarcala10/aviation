@@ -1,7 +1,7 @@
 import Foundation
 import Observation
 
-@MainActor @Observable
+@Observable
 final class SearchViewModel {
     enum State: Equatable {
         case idle, loading
@@ -35,7 +35,10 @@ final class SearchViewModel {
         }
     }
     
-    private static func message(for error: Error) -> String {
+    static func message(
+        for error: Error,
+        generic: String = String(localized: "No se ha podido completar la búsqueda")
+    ) -> String {
         switch error {
         case let api as APIError where api.code.contains("limit"):
             String(localized: "Se ha agotado la cuota de la API")
@@ -44,7 +47,7 @@ final class SearchViewModel {
         case is URLError:
             String(localized: "Comprueba tu conexión")
         default:
-            String(localized: "No se ha podido completar la búsqueda")
+            generic
         }
     }
 }

@@ -2,17 +2,21 @@ import SwiftUI
 
 struct SearchView: View {
     @State var viewModel: SearchViewModel
+    let getDepartures: GetDeparturesUseCase
     @State private var query = ""
     
     var body: some View {
         NavigationStack {
             content
                 .navigationTitle("Aeropuertos")
+                .navigationDestination(for: Airport.self) {
+                    FlightsView(
+                        viewModel: FlightsViewModel(airport: $0, getDepartures: getDepartures))
+                }
                 .searchable(text: $query, prompt: "Buscar aeropuerto")
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
         }
-        // Debounce 300 ms; a new keystroke cancels this task (and the in-flight search).
         .task(id: query) {
             if !query.isEmpty {
                 try? await Task.sleep(for: .milliseconds(300))
@@ -44,7 +48,9 @@ struct SearchView: View {
         case .loading:
             ProgressView("Buscando…")
         case .loaded(let airports):
-            List(airports) { AirportRow(airport: $0) }
+            List(airports) { airport in
+                NavigationLink(value: airport) { AirportRow(airport: airport) }
+            }
         case .empty(let text):
             ContentUnavailableView.search(text: text)
         case .failed(let message):

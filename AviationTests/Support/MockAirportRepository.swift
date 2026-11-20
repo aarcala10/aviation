@@ -32,7 +32,8 @@ actor Gate {
 }
 
 extension Airport {
-    static let madrid = Airport(
+    nonisolated static let madrid = Airport(
         name: "Adolfo Suarez Madrid-Barajas", iataCode: "MAD", country: "Spain")
-    static let barcelona = Airport(name: "Barcelona El Prat", iataCode: "BCN", country: "Spain")
+    nonisolated static let barcelona = Airport(
+        name: "Barcelona El Prat", iataCode: "BCN", country: "Spain")
 }

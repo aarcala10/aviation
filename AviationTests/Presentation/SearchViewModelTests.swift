@@ -2,7 +2,6 @@ import Testing
 
 @testable import Aviation
 
-@MainActor
 struct SearchViewModelTests {
     private func makeVM(_ repo: MockAirportRepository) -> SearchViewModel {
         SearchViewModel(searchAirports: SearchAirportsUseCase(repository: repo))

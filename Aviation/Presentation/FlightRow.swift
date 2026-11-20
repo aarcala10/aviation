@@ -1,0 +1,44 @@
+import SwiftUI
+
+struct FlightRow: View {
+    let flight: Flight
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    
+    /// Spoken form only ("5:55", not "05:55", so a leading zero is not read out).
+    private var departure: String {
+        let time =
+            flight.scheduledTime.hasPrefix("0")
+            ? String(flight.scheduledTime.dropFirst()) : flight.scheduledTime
+        return time.hasPrefix("1:")
+            ? String(localized: "Sale a la \(time)") : String(localized: "Sale a las \(time)")
+    }
+    
+    var body: some View {
+        let layout =
+            dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
+            : AnyLayout(HStackLayout(alignment: .top, spacing: 12))
+        layout {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(flight.number).font(.headline).speechSpellsOutCharacters()
+                Text(flight.airline).font(.subheadline).foregroundStyle(.secondary)
+                Text(
+                    "\(Text(flight.destinationIATA).font(.subheadline.weight(.semibold).monospaced()).foregroundStyle(Color.accentColor)) \(flight.destinationName)"
+                )
+                .font(.subheadline)
+            }
+            if !dynamicTypeSize.isAccessibilitySize { Spacer(minLength: 8) }
+            VStack(
+                alignment: dynamicTypeSize.isAccessibilitySize ? .leading : .trailing, spacing: 8
+            ) {
+                Text(flight.scheduledTime).font(.body.monospacedDigit())
+                StatusBadge(status: flight.status)
+            }
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(
+            Text(
+                "Vuelo \(Text(flight.number).speechSpellsOutCharacters()), \(flight.airline). A \(flight.spokenDestination).\(departure). \(StatusBadge(status: flight.status).title)."
+            ))
+    }
+}
