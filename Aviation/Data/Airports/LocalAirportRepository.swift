@@ -23,7 +23,7 @@ nonisolated struct LocalAirportRepository: AirportRepository, CityLookup {
             uniquingKeysWith: { first, _ in first })
     }
     
-    // @concurrent keeps the filtering of ~4000 records off the caller's (main) actor.
+    // Off the caller's (main) actor: async functions otherwise run on the caller's actor.
     @concurrent
     func airports(search: String) async throws -> [Airport] {
         let query = search.trimmingCharacters(in: .whitespacesAndNewlines)
