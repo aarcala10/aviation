@@ -31,6 +31,8 @@ struct FlightDetailView: View {
         }
         .navigationTitle(viewModel.title)
         .navigationBarTitleDisplayMode(.inline)
+        // The nav bar keeps its name (UI tests) but the header is the visible title.
+        .toolbar(removing: .title)
         // The header is the first element, so VoiceOver starts on it after a ScreenChanged post.
         .onAppear { AccessibilityNotification.ScreenChanged().post() }
     }

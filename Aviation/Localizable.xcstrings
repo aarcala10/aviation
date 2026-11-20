@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "es",
   "strings" : {
+    "—" : {
+      "extractionState" : "manual"
+    },
     "%@ %@" : {
       "localizations" : {
         "es" : {
@@ -167,13 +170,20 @@
     "Vuelo" : {
       "extractionState" : "manual"
     },
+    "Vuelo %@, %@. A %@.%@. %@." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Vuelo %1$@, %2$@. A %3$@.%4$@. %5$@."
+          }
+        }
+      }
+    },
     "Vuelo %@. %@. A %@. %@. %@." : {
       "extractionState" : "manual"
     },
     "Vuelo %@. De %@ a %@. %@." : {
-      "extractionState" : "manual"
-    },
-    "—" : {
       "extractionState" : "manual"
     }
   },
