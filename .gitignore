@@ -6,5 +6,5 @@ DerivedData/
 .DS_Store
 *.xcresult
 Config/Info.plist
-docs/
-docs/plans/
+docs/*
+!docs/plans/
