@@ -4,6 +4,15 @@ struct FlightRow: View {
     let flight: Flight
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     
+    /// Spoken form only ("5:55", not "05:55", so a leading zero is not read out).
+    private var departure: String {
+        let time =
+            flight.scheduledTime.hasPrefix("0")
+            ? String(flight.scheduledTime.dropFirst()) : flight.scheduledTime
+        return time.hasPrefix("1:")
+            ? String(localized: "Sale a la \(time)") : String(localized: "Sale a las \(time)")
+    }
+    
     var body: some View {
         let layout =
             dynamicTypeSize.isAccessibilitySize
@@ -29,7 +38,7 @@ struct FlightRow: View {
         .accessibilityElement(children: .combine)
         .accessibilityLabel(
             Text(
-                "Vuelo \(Text(flight.number).speechSpellsOutCharacters()), \(flight.airline), a \(flight.destinationName) \(Text(flight.destinationIATA).speechSpellsOutCharacters()), \(flight.scheduledTime), \(StatusBadge(status: flight.status).title)"
+                "Vuelo \(Text(flight.number).speechSpellsOutCharacters()), \(flight.airline). A \(flight.spokenDestination).\(departure). \(StatusBadge(status: flight.status).title)."
             ))
     }
 }

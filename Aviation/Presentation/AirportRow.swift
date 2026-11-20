@@ -24,7 +24,6 @@ struct AirportRow: View {
             }
         }
         .accessibilityElement(children: .combine)
-        // Natural order (name, code, country); the code is spelled out by the system, not by hand.
         .accessibilityLabel(
             Text(
                 "\(airport.name), \(Text(airport.iataCode).speechSpellsOutCharacters()), \(airport.country)"

@@ -6,12 +6,16 @@ struct AviationApp: App {
     private let getDepartures: GetDeparturesUseCase
     
     init() {
+        let local = Self.loadLocalRepository()
         viewModel = SearchViewModel(
-            searchAirports: SearchAirportsUseCase(repository: Self.loadRepository()))
+            searchAirports: SearchAirportsUseCase(
+                repository: local.map { $0 as any AirportRepository }
+                    ?? UnavailableAirportRepository()))
         // Without a key the request fails with an API error and the flights screen shows it.
         let key = Bundle.main.object(forInfoDictionaryKey: "AviationstackAccessKey") as? String
         getDepartures = GetDeparturesUseCase(
-            repository: AviationstackFlightRepository.live(accessKey: key ?? ""))
+            repository: AviationstackFlightRepository.live(accessKey: key ?? ""),
+            cities: local)
     }
     
     var body: some Scene {
@@ -19,15 +23,11 @@ struct AviationApp: App {
     }
     
     /// If the bundled list cannot be read, searches fail and the view shows its error state.
-    private static func loadRepository() -> any AirportRepository {
-        do {
-            guard let url = Bundle.main.url(forResource: "airports", withExtension: "json") else {
-                throw CocoaError(.fileNoSuchFile)
-            }
-            return try LocalAirportRepository(data: Data(contentsOf: url))
-        } catch {
-            return UnavailableAirportRepository()
+    private static func loadLocalRepository() -> LocalAirportRepository? {
+        guard let url = Bundle.main.url(forResource: "airports", withExtension: "json") else {
+            return nil
         }
+        return try? LocalAirportRepository(data: Data(contentsOf: url))
     }
 }
 

@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "es",
   "strings" : {
+    "%@ %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
     "%@, %@, %@" : {
       "localizations" : {
         "es" : {
@@ -37,21 +47,9 @@
     "Aeropuertos" : {
       "extractionState" : "manual"
     },
-    "Aterrizado" : { "extractionState" : "manual" },
-    "Cancelado" : { "extractionState" : "manual" },
-    "Cargando salidas…" : { "extractionState" : "manual" },
-    "Desconocido" : { "extractionState" : "manual" },
-    "Desviado" : { "extractionState" : "manual" },
-    "En vuelo" : { "extractionState" : "manual" },
-    "Error al cargar las salidas" : { "extractionState" : "manual" },
-    "Incidente" : { "extractionState" : "manual" },
-    "No hay salidas" : { "extractionState" : "manual" },
-    "No se han podido cargar las salidas" : { "extractionState" : "manual" },
-    "Programado" : { "extractionState" : "manual" },
-    "Reintentar" : { "extractionState" : "manual" },
-    "Retrasado" : { "extractionState" : "manual" },
-    "Salidas de %@" : { "extractionState" : "manual" },
-    "Vuelo %@, %@, a %@ %@, %@, %@" : { "extractionState" : "manual" },
+    "Aterrizado" : {
+      "extractionState" : "manual"
+    },
     "Busca un aeropuerto" : {
       "extractionState" : "manual"
     },
@@ -61,7 +59,25 @@
     "Buscar aeropuerto" : {
       "extractionState" : "manual"
     },
+    "Cancelado" : {
+      "extractionState" : "manual"
+    },
+    "Cargando salidas…" : {
+      "extractionState" : "manual"
+    },
     "Comprueba tu conexión" : {
+      "extractionState" : "manual"
+    },
+    "Desconocido" : {
+      "extractionState" : "manual"
+    },
+    "Desviado" : {
+      "extractionState" : "manual"
+    },
+    "En vuelo" : {
+      "extractionState" : "manual"
+    },
+    "Error al cargar las salidas" : {
       "extractionState" : "manual"
     },
     "Error en la búsqueda" : {
@@ -70,13 +86,46 @@
     "Escribe un nombre, una ciudad o un código IATA" : {
       "extractionState" : "manual"
     },
+    "Incidente" : {
+      "extractionState" : "manual"
+    },
     "La clave de la API no es válida" : {
+      "extractionState" : "manual"
+    },
+    "No hay salidas" : {
       "extractionState" : "manual"
     },
     "No se ha podido completar la búsqueda" : {
       "extractionState" : "manual"
     },
+    "No se han podido cargar las salidas" : {
+      "extractionState" : "manual"
+    },
+    "Programado" : {
+      "extractionState" : "manual"
+    },
+    "Reintentar" : {
+      "extractionState" : "manual"
+    },
+    "Retrasado" : {
+      "extractionState" : "manual"
+    },
+    "Sale a la %@" : {
+      "extractionState" : "manual"
+    },
+    "Sale a las %@" : {
+      "extractionState" : "manual"
+    },
+    "Salidas de %@" : {
+      "extractionState" : "manual"
+    },
     "Se ha agotado la cuota de la API" : {
+      "extractionState" : "manual"
+    },
+    "Sin fecha" : {
+      "extractionState" : "manual"
+    },
+    "Vuelo %@. %@. A %@. %@. %@." : {
       "extractionState" : "manual"
     }
   },

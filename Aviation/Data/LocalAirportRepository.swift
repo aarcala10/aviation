@@ -1,7 +1,12 @@
 import Foundation
 
 /// Searches a bundled airport list (JSON array of {n: name, c: city, i: IATA, k: ISO country}).
-nonisolated struct LocalAirportRepository: AirportRepository {
+nonisolated struct LocalAirportRepository: AirportRepository, CityLookup {
+    /// IATA (uppercased) -> city, built once; airports without a city are left out.
+    private let cityByIATA: [String: String]
+    
+    func city(forIATA iata: String) -> String? { cityByIATA[iata.uppercased()] }
+    
     /// A 3-letter query can match hundreds of airports; the list only needs the best ones.
     private static let maxResults = 50
     
@@ -13,6 +18,9 @@ nonisolated struct LocalAirportRepository: AirportRepository {
     
     init(data: Data) throws {
         records = try JSONDecoder().decode([Record].self, from: data)
+        cityByIATA = Dictionary(
+            records.filter { !$0.c.isEmpty }.map { ($0.i.uppercased(), $0.c) },
+            uniquingKeysWith: { first, _ in first })
     }
     
     // @concurrent keeps the filtering of ~4000 records off the caller's (main) actor.

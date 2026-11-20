@@ -14,6 +14,10 @@ nonisolated struct Flight: Equatable, Sendable, Identifiable {
     let isCodeshare: Bool
     /// "yyyy-MM-dd", as received (`flight_date`).
     var date: String = ""
+    /// City of the destination when known (filled by the use case), else empty.
+    var destinationCity: String = ""
+    /// What VoiceOver says for the destination: the city, or the API's airport name.
+    var spokenDestination: String { destinationCity.isEmpty ? destinationName : destinationCity }
     /// A page can repeat a flight number on other days or at other times.
     var id: String { "\(number)-\(date)-\(scheduledTime)" }
     

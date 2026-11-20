@@ -17,7 +17,6 @@ struct SearchView: View {
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
         }
-        // Debounce 300 ms; a new keystroke cancels this task (and the in-flight search).
         .task(id: query) {
             if !query.isEmpty {
                 try? await Task.sleep(for: .milliseconds(300))
