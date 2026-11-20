@@ -3,11 +3,40 @@ import Testing
 @testable import Aviation
 
 struct GetDeparturesUseCaseTests {
-    @Test("departures_requestsFirstPageOfHundred")
-    func departures_requestsFirstPageOfHundred() async throws {
+    private func page(_ count: Int, prefix: String = "F", isCodeshare: Bool = false) -> [Flight] {
+        (0..<count).map { .sample(number: "\(prefix)\($0)", isCodeshare: isCodeshare) }
+    }
+    
+    @Test("departures_requestsPageAtOffset")
+    func departures_requestsPageAtOffset() async throws {
         let repo = MockFlightRepository()
-        _ = try await GetDeparturesUseCase(repository: repo)(from: "MAD")
-        #expect(await repo.calls == [.init(iata: "MAD", limit: 100, offset: 0)])
+        _ = try await GetDeparturesUseCase(repository: repo)(from: "MAD", offset: 200)
+        #expect(await repo.calls == [.init(iata: "MAD", limit: 100, offset: 200)])
+    }
+    
+    @Test("departures_fullPage_hasNextOffset")
+    func departures_fullPage_hasNextOffset() async throws {
+        let raw = page(100)
+        let repo = MockFlightRepository { _ in raw }
+        let result = try await GetDeparturesUseCase(repository: repo)(from: "MAD", offset: 100)
+        #expect(result.nextOffset == 200)
+    }
+    
+    @Test("departures_shortPage_hasNoNextOffset")
+    func departures_shortPage_hasNoNextOffset() async throws {
+        let raw = page(99)
+        let repo = MockFlightRepository { _ in raw }
+        let result = try await GetDeparturesUseCase(repository: repo)(from: "MAD", offset: 100)
+        #expect(result.nextOffset == nil)
+    }
+    
+    @Test("departures_fullPageOfCodeshares_stillHasNextOffset")
+    func departures_fullPageOfCodeshares_stillHasNextOffset() async throws {
+        let raw = page(100, isCodeshare: true)
+        let repo = MockFlightRepository { _ in raw }
+        let result = try await GetDeparturesUseCase(repository: repo)(from: "MAD", offset: 100)
+        #expect(result.flights.isEmpty)
+        #expect(result.nextOffset == 200)
     }
     
     @Test("departures_skipsCodeshares")
@@ -16,7 +45,7 @@ struct GetDeparturesUseCaseTests {
         let repo = MockFlightRepository { _ in
             [.sample(number: "V76135", isCodeshare: true), operated]
         }
-        let flights = try await GetDeparturesUseCase(repository: repo)(from: "MAD")
+        let flights = try await GetDeparturesUseCase(repository: repo)(from: "MAD").flights
         #expect(flights == [operated])
     }
     

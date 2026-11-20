@@ -26,12 +26,25 @@ struct AviationApp: App {
         getDepartures = GetDeparturesUseCase(repository: flights, cities: local)
     }
     
-    /// UI tests: the bundled `flights.json` (Debug builds only) instead of the network, no cache.
+    /// UI tests: bundled JSON (Debug builds only) instead of the network, no cache. `-uiTestPagedFixtures`
+    /// serves 100 flights at offset 0 and 5 at offset 100.
     private static func fixtureRepository() -> AviationstackFlightRepository {
-        let data =
-            Bundle.main.url(forResource: "flights", withExtension: "json")
-            .flatMap { try? Data(contentsOf: $0) } ?? Data()
-        return AviationstackFlightRepository(accessKey: "") { _ in data }
+        func fixture(_ name: String) -> Data {
+            Bundle.main.url(forResource: name, withExtension: "json")
+                .flatMap { try? Data(contentsOf: $0) } ?? Data()
+        }
+        let arguments = ProcessInfo.processInfo.arguments
+        guard arguments.contains("-uiTestPagedFixtures") else {
+            let data = fixture("flights")
+            return AviationstackFlightRepository(accessKey: "") { _ in data }
+        }
+        let first = fixture("flights_page1")
+        let second = fixture("flights_page2")
+        return AviationstackFlightRepository(accessKey: "") { request in
+            let offset = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)?
+                .queryItems?.first { $0.name == "offset" }?.value
+            return offset == "100" ? second : first
+        }
     }
     
     var body: some Scene {

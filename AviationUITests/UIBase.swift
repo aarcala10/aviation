@@ -14,4 +14,12 @@ nonisolated class UIBase: XCTestCase {
         app.launchArguments = launchArguments
         app.launch()
     }
+    
+    @MainActor
+    func screenshot(_ name: String) {
+        let attachment = XCTAttachment(screenshot: app.screenshot())
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
 }

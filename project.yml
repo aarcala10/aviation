@@ -18,6 +18,10 @@ targets:
       # Debug only (excluded from Release in Config/Base.xcconfig): `-uiTestFixtures` serves it.
       - path: AviationTests/Fixtures/flights.json
         buildPhase: resources
+      - path: AviationTests/Fixtures/flights_page1.json
+        buildPhase: resources
+      - path: AviationTests/Fixtures/flights_page2.json
+        buildPhase: resources
     configFiles:
       Debug: Config/Base.xcconfig
       Release: Config/Base.xcconfig

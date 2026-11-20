@@ -13,7 +13,11 @@ struct StatusBadge: View {
         } icon: {
             Image(systemName: symbol).foregroundStyle(color)
         }
+        // Icon beside the text even at accessibility sizes (the default stacks them), and the
+        // natural width: a narrow parent would break "Programado" mid-word.
+        .labelStyle(.titleAndIcon)
         .font(.caption.weight(.semibold))
+        .fixedSize()
         .padding(.horizontal, 8)
         .padding(.vertical, 4)
         .background(color.opacity(0.15), in: .capsule)

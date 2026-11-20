@@ -9,7 +9,15 @@ final class FlightsViewModel {
         case failed(String)
     }
     
+    enum More: Equatable {
+        case available, loading
+        case failed(String)
+        case complete
+    }
+    
     private(set) var state: State = .idle
+    private(set) var more: More = .complete
+    @ObservationIgnored private var nextOffset: Int?
     let airport: Airport
     private let getDepartures: GetDeparturesUseCase
     
@@ -41,14 +49,51 @@ final class FlightsViewModel {
         return flights.groupedByDate()
     }
     
+    /// Appends the next page. A `load()` started meanwhile invalidates it through `generation`.
+    func loadMore() async {
+        switch more {
+        case .available, .failed: break
+        case .loading, .complete: return
+        }
+        guard case .loaded(var shown) = state, var offset = nextOffset else { return }
+        let mine = generation
+        more = .loading
+        do {
+            var known = Set(shown.map(\.id))
+            var added = false
+            // A page of only codeshares or repeats adds nothing: keep going so the list can grow.
+            while !added {
+                let page = try await getDepartures(from: airport.iataCode, offset: offset)
+                guard mine == generation else { return }
+                let fresh = page.flights.filter { known.insert($0.id).inserted }
+                shown += fresh
+                added = !fresh.isEmpty
+                nextOffset = page.nextOffset
+                guard let next = page.nextOffset else { break }
+                offset = next
+            }
+            state = .loaded(shown)
+            more = nextOffset == nil ? .complete : .available
+        } catch {
+            guard mine == generation else { return }
+            more = .failed(
+                SearchViewModel.message(
+                    for: error, generic: String(localized: "No se han podido cargar más salidas")))
+        }
+    }
+    
     func load() async {
         generation += 1
         let mine = generation
         state = .loading
+        more = .complete
+        nextOffset = nil
         do {
-            let flights = try await getDepartures(from: airport.iataCode)
+            let page = try await getDepartures(from: airport.iataCode)
             guard isCurrent(mine) else { return }
-            state = flights.isEmpty ? .empty : .loaded(flights)
+            state = page.flights.isEmpty ? .empty : .loaded(page.flights)
+            nextOffset = page.nextOffset
+            more = page.nextOffset == nil ? .complete : .available
         } catch {
             guard isCurrent(mine) else { return }
             state = .failed(
