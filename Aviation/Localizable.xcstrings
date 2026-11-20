@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "es",
   "strings" : {
+    "—" : {
+      "extractionState" : "manual"
+    },
     "%@ %@" : {
       "localizations" : {
         "es" : {
@@ -44,10 +47,19 @@
         }
       }
     },
+    "%lld min" : {
+      "extractionState" : "manual"
+    },
+    "Aerolínea" : {
+      "extractionState" : "manual"
+    },
     "Aeropuertos" : {
       "extractionState" : "manual"
     },
     "Aterrizado" : {
+      "extractionState" : "manual"
+    },
+    "Aterrizado con retraso" : {
       "extractionState" : "manual"
     },
     "Busca un aeropuerto" : {
@@ -86,10 +98,19 @@
     "Escribe un nombre, una ciudad o un código IATA" : {
       "extractionState" : "manual"
     },
+    "Estimada" : {
+      "extractionState" : "manual"
+    },
+    "Fecha" : {
+      "extractionState" : "manual"
+    },
     "Incidente" : {
       "extractionState" : "manual"
     },
     "La clave de la API no es válida" : {
+      "extractionState" : "manual"
+    },
+    "Llegada" : {
       "extractionState" : "manual"
     },
     "No hay salidas" : {
@@ -101,7 +122,16 @@
     "No se han podido cargar las salidas" : {
       "extractionState" : "manual"
     },
+    "Número" : {
+      "extractionState" : "manual"
+    },
+    "Programada" : {
+      "extractionState" : "manual"
+    },
     "Programado" : {
+      "extractionState" : "manual"
+    },
+    "Puerta" : {
       "extractionState" : "manual"
     },
     "Reintentar" : {
@@ -110,10 +140,16 @@
     "Retrasado" : {
       "extractionState" : "manual"
     },
+    "Retraso" : {
+      "extractionState" : "manual"
+    },
     "Sale a la %@" : {
       "extractionState" : "manual"
     },
     "Sale a las %@" : {
+      "extractionState" : "manual"
+    },
+    "Salida" : {
       "extractionState" : "manual"
     },
     "Salidas de %@" : {
@@ -122,10 +158,32 @@
     "Se ha agotado la cuota de la API" : {
       "extractionState" : "manual"
     },
+    "Sin dato" : {
+      "extractionState" : "manual"
+    },
     "Sin fecha" : {
       "extractionState" : "manual"
     },
+    "Terminal" : {
+      "extractionState" : "manual"
+    },
+    "Vuelo" : {
+      "extractionState" : "manual"
+    },
+    "Vuelo %@, %@. A %@.%@. %@." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Vuelo %1$@, %2$@. A %3$@.%4$@. %5$@."
+          }
+        }
+      }
+    },
     "Vuelo %@. %@. A %@. %@. %@." : {
+      "extractionState" : "manual"
+    },
+    "Vuelo %@. De %@ a %@. %@." : {
       "extractionState" : "manual"
     }
   },

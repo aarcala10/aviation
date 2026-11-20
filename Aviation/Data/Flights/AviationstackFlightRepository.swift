@@ -21,12 +21,22 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
     
     private nonisolated struct Item: Decodable {
         nonisolated struct Departure: Decodable {
+            let airport: String?
+            let iata: String?
+            let terminal: String?
+            let gate: String?
             let scheduled: String
+            let estimated: String?
             let delay: Int?
         }
         nonisolated struct Arrival: Decodable {
             let airport: String?
             let iata: String?
+            let terminal: String?
+            let gate: String?
+            let scheduled: String?
+            let estimated: String?
+            let delay: Int?
         }
         nonisolated struct Airline: Decodable {
             let name: String?
@@ -84,7 +94,17 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
                     ?? .unknown,
                 delayMinutes: item.departure.delay ?? 0,
                 isCodeshare: item.flight.codeshared != nil,
-                date: item.flight_date ?? "")
+                date: item.flight_date ?? "",
+                originIATA: item.departure.iata,
+                originName: item.departure.airport,
+                departureTerminal: item.departure.terminal,
+                departureGate: item.departure.gate,
+                estimatedTime: item.departure.estimated.map(Self.localTime),
+                arrivalTerminal: item.arrival.terminal,
+                arrivalGate: item.arrival.gate,
+                arrivalScheduledTime: item.arrival.scheduled.map(Self.localTime),
+                arrivalEstimatedTime: item.arrival.estimated.map(Self.localTime),
+                arrivalDelayMinutes: item.arrival.delay)
         }
     }
     

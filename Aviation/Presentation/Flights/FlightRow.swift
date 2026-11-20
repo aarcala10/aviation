@@ -32,13 +32,13 @@ struct FlightRow: View {
                 alignment: dynamicTypeSize.isAccessibilitySize ? .leading : .trailing, spacing: 8
             ) {
                 Text(flight.scheduledTime).font(.body.monospacedDigit())
-                StatusBadge(status: flight.status)
+                StatusBadge(status: flight.status, landedLate: flight.landedLate)
             }
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(
             Text(
-                "Vuelo \(Text(flight.number).speechSpellsOutCharacters()), \(flight.airline). A \(flight.spokenDestination).\(departure). \(StatusBadge(status: flight.status).title)."
+                "Vuelo \(Text(flight.number).speechSpellsOutCharacters()), \(flight.airline). A \(flight.spokenDestination).\(departure). \(StatusBadge(status: flight.status, landedLate: flight.landedLate).spokenTitle)."
             ))
     }
 }

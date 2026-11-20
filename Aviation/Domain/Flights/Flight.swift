@@ -2,7 +2,7 @@ nonisolated enum FlightStatus: String, Equatable, Sendable, Codable {
     case scheduled, active, landed, cancelled, incident, diverted, delayed, unknown
 }
 
-nonisolated struct Flight: Equatable, Sendable, Identifiable, Codable {
+nonisolated struct Flight: Equatable, Sendable, Hashable, Identifiable, Codable {
     let number: String
     let airline: String
     let destinationIATA: String
@@ -16,6 +16,20 @@ nonisolated struct Flight: Equatable, Sendable, Identifiable, Codable {
     var date: String = ""
     /// City of the destination when known (filled by the use case), else empty.
     var destinationCity: String = ""
+    // Detail fields: optional so a page already in the cache still decodes. Times are "HH:mm" local.
+    var originIATA: String? = nil
+    var originName: String? = nil
+    var originCity: String = ""
+    var departureTerminal: String? = nil
+    var departureGate: String? = nil
+    var estimatedTime: String? = nil
+    var arrivalTerminal: String? = nil
+    var arrivalGate: String? = nil
+    var arrivalScheduledTime: String? = nil
+    var arrivalEstimatedTime: String? = nil
+    var arrivalDelayMinutes: Int? = nil
+    /// Landed with an arrival delay.
+    var landedLate: Bool { reportedStatus == .landed && (arrivalDelayMinutes ?? 0) > 0 }
     /// What VoiceOver says for the destination: the city, or the API's airport name.
     var spokenDestination: String { destinationCity.isEmpty ? destinationName : destinationCity }
     /// A page can repeat a flight number on other days or at other times.
@@ -25,8 +39,4 @@ nonisolated struct Flight: Equatable, Sendable, Identifiable, Codable {
         let canBeDelayed = reportedStatus == .scheduled || reportedStatus == .active
         return canBeDelayed && delayMinutes > 0 ? .delayed : reportedStatus
     }
-}
-
-nonisolated protocol FlightRepository: Sendable {
-    func departures(from iata: String, limit: Int, offset: Int) async throws -> [Flight]
 }

@@ -13,12 +13,25 @@ struct AviationApp: App {
                 repository: local.map { $0 as any AirportRepository }
                     ?? UnavailableAirportRepository()))
         // Without a key the request fails with an API error and the flights screen shows it.
-        let key = Bundle.main.object(forInfoDictionaryKey: "AviationstackAccessKey") as? String
-        let live = AviationstackFlightRepository.live(accessKey: key ?? "")
-        let flights = CachedFlightRepository.wrapping(live) {
-            try ModelContainer(for: CachedDepartures.self)
+        let flights: any FlightRepository
+        if ProcessInfo.processInfo.arguments.contains("-uiTestFixtures") {
+            flights = Self.fixtureRepository()
+        } else {
+            let key = Bundle.main.object(forInfoDictionaryKey: "AviationstackAccessKey") as? String
+            let live = AviationstackFlightRepository.live(accessKey: key ?? "")
+            flights = CachedFlightRepository.wrapping(live) {
+                try ModelContainer(for: CachedDepartures.self)
+            }
         }
         getDepartures = GetDeparturesUseCase(repository: flights, cities: local)
+    }
+    
+    /// UI tests: the bundled `flights.json` (Debug builds only) instead of the network, no cache.
+    private static func fixtureRepository() -> AviationstackFlightRepository {
+        let data =
+            Bundle.main.url(forResource: "flights", withExtension: "json")
+            .flatMap { try? Data(contentsOf: $0) } ?? Data()
+        return AviationstackFlightRepository(accessKey: "") { _ in data }
     }
     
     var body: some Scene {
