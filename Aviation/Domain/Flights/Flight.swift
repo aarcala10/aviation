@@ -40,7 +40,3 @@ nonisolated struct Flight: Equatable, Sendable, Hashable, Identifiable, Codable 
         return canBeDelayed && delayMinutes > 0 ? .delayed : reportedStatus
     }
 }
-
-nonisolated protocol FlightRepository: Sendable {
-    func departures(from iata: String, limit: Int, offset: Int) async throws -> [Flight]
-}
