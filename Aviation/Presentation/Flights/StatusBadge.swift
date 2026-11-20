@@ -1,5 +1,18 @@
 import SwiftUI
 
+/// Clock-only pill that sits beside "En vuelo" when the flight left late.
+struct DelayPill: View {
+    var body: some View {
+        Image(systemName: "clock")
+            .foregroundStyle(Color("Accent/Highlight"))
+            .font(.caption.weight(.semibold))
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(Color("Accent/Highlight").opacity(0.15), in: .capsule)
+            .accessibilityLabel("Retrasado")
+    }
+}
+
 struct StatusBadge: View {
     let status: FlightStatus
     /// Landed with an arrival delay: still green, but with a clock instead of the arrival plane.

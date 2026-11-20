@@ -176,12 +176,12 @@
     "Vuelo" : {
       "extractionState" : "manual"
     },
-    "Vuelo %@, %@. A %@.%@. %@." : {
+    "Vuelo %@, %@. A %@.%@. %@%@." : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Vuelo %1$@, %2$@. A %3$@.%4$@. %5$@."
+            "value" : "Vuelo %1$@, %2$@. A %3$@.%4$@. %5$@%6$@."
           }
         }
       }

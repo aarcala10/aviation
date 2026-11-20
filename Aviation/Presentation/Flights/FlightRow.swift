@@ -13,6 +13,10 @@ struct FlightRow: View {
             ? String(localized: "Sale a la \(time)") : String(localized: "Sale a las \(time)")
     }
     
+    /// In the air after leaving late: "En vuelo" plus a clock pill, not "Retrasado".
+    private var departedLate: Bool { flight.reportedStatus == .active && flight.delayMinutes > 0 }
+    private var badgeStatus: FlightStatus { departedLate ? .active : flight.status }
+    
     var body: some View {
         let layout =
             dynamicTypeSize.isAccessibilitySize
@@ -32,13 +36,16 @@ struct FlightRow: View {
                 alignment: dynamicTypeSize.isAccessibilitySize ? .leading : .trailing, spacing: 8
             ) {
                 Text(flight.scheduledTime).font(.body.monospacedDigit())
-                StatusBadge(status: flight.status, landedLate: flight.landedLate)
+                HStack(spacing: 6) {
+                    if departedLate { DelayPill() }
+                    StatusBadge(status: badgeStatus, landedLate: flight.landedLate)
+                }
             }
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(
             Text(
-                "Vuelo \(Text(flight.number).speechSpellsOutCharacters()), \(flight.airline). A \(flight.spokenDestination).\(departure). \(StatusBadge(status: flight.status, landedLate: flight.landedLate).spokenTitle)."
+                "Vuelo \(Text(flight.number).speechSpellsOutCharacters()), \(flight.airline). A \(flight.spokenDestination).\(departure). \(StatusBadge(status: badgeStatus, landedLate: flight.landedLate).spokenTitle)\(departedLate ? String(localized: ", retrasado") : "")."
             ))
     }
 }
