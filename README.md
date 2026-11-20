@@ -55,6 +55,8 @@ El trabajo se organiza en historias de usuario de una línea, como [issues con l
 | [#4](https://github.com/aarcala10/aviation/issues/4) | Ver el detalle de un vuelo | ✅ |
 | [#5](https://github.com/aarcala10/aviation/issues/5) | Cargar más vuelos al hacer scroll (paginación) | ✅ |
 
+Los planes que se han llevado a cabo, uno por historia (criterios de aceptación, fuera de alcance y lista de tests), están en [`docs/plans/`](docs/plans): [plan1](docs/plans/plan1.md), [plan2](docs/plans/plan2.md), [plan3](docs/plans/plan3.md), [plan4](docs/plans/plan4.md) y [plan5](docs/plans/plan5.md).
+
 ---
 
 ## 🧭 Cómo funciona
