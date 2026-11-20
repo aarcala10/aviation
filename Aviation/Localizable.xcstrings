@@ -119,6 +119,12 @@
     "No se ha podido completar la búsqueda" : {
       "extractionState" : "manual"
     },
+    "Cargando más salidas" : {
+      "extractionState" : "manual"
+    },
+    "No se han podido cargar más salidas" : {
+      "extractionState" : "manual"
+    },
     "No se han podido cargar las salidas" : {
       "extractionState" : "manual"
     },

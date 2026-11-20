@@ -11,8 +11,9 @@ nonisolated struct GetDeparturesUseCase: Sendable {
     
     /// Codeshares repeat the operated flight under other airlines, so only operated ones are kept.
     func callAsFunction(from iata: String, offset: Int = 0) async throws -> DeparturesPage {
-        // RED stub: pagination not implemented yet.
-        let flights = try await repository.departures(from: iata, limit: Self.pageSize, offset: 0)
+        let raw = try await repository.departures(from: iata, limit: Self.pageSize, offset: offset)
+        let flights =
+            raw
             .filter { !$0.isCodeshare }
             .map { flight in
                 var flight = flight
@@ -20,7 +21,8 @@ nonisolated struct GetDeparturesUseCase: Sendable {
                 flight.originCity = flight.originIATA.flatMap(city(forIATA:)) ?? ""
                 return flight
             }
-        return DeparturesPage(flights: flights, nextOffset: nil)
+        return DeparturesPage(
+            flights: flights, nextOffset: raw.count == Self.pageSize ? offset + Self.pageSize : nil)
     }
     
     func city(forIATA iata: String) -> String? { cities?.city(forIATA: iata) }

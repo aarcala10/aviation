@@ -33,7 +33,12 @@ struct FlightsView: View {
         // ScreenChanged on its own lands on the element that is leaving, so the title takes the
         // focus on appear (also when coming back from the detail).
         .onAppear { isTitleFocused = true }
-        .onChange(of: viewModel.state) { _, state in
+        .onChange(of: viewModel.more) { _, more in
+            if case .failed(let message) = more { announce(message) }
+        }
+        .onChange(of: viewModel.state) { old, state in
+            // Appending a page changes the state too, but must not move the focus.
+            if case .loaded = old, case .loaded = state { return }
             if case .loaded = state, attempt > 0 {
                 // After a retry the new content starts at its first flight.
                 isFirstFlightFocused = true
@@ -41,11 +46,40 @@ struct FlightsView: View {
                 announceScreen()
             }
             if case .failed(let message) = state {
-                // High priority so the screen change does not cut it off.
-                var announcement = AttributedString(message)
-                announcement.accessibilitySpeechAnnouncementPriority = .high
-                AccessibilityNotification.Announcement(announcement).post()
+                announce(message)
             }
+        }
+    }
+    
+    private func announce(_ message: String) {
+        // High priority so the screen change does not cut it off.
+        var announcement = AttributedString(message)
+        announcement.accessibilitySpeechAnnouncementPriority = .high
+        AccessibilityNotification.Announcement(announcement).post()
+    }
+    
+    @ViewBuilder private var moreRow: some View {
+        switch viewModel.more {
+        case .available:
+            // Its own branch, so every page brings a fresh row that triggers the next load. An
+            // unstructured Task: a `.task` would be cancelled when the row turns into `.loading`.
+            ProgressView()
+                .frame(maxWidth: .infinity)
+                .accessibilityLabel(Text("Cargando más salidas"))
+                .onAppear { Task { await viewModel.loadMore() } }
+        case .loading:
+            ProgressView()
+                .frame(maxWidth: .infinity)
+                .accessibilityLabel(Text("Cargando más salidas"))
+        case .failed(let message):
+            VStack(spacing: 8) {
+                Text(message)
+                Button("Reintentar") { Task { await viewModel.loadMore() } }
+                    .frame(minHeight: 44)
+            }
+            .frame(maxWidth: .infinity)
+        case .complete:
+            EmptyView()
         }
     }
     
@@ -69,12 +103,15 @@ struct FlightsView: View {
         case .loaded:
             let sections = viewModel.sections
             let firstID = sections.first?.flights.first?.id
-            List(sections) { section in
-                Section {
-                    ForEach(section.flights) { row($0, isFirst: $0.id == firstID) }
-                } header: {
-                    Text(FlightDate.title(section.date))
+            List {
+                ForEach(sections) { section in
+                    Section {
+                        ForEach(section.flights) { row($0, isFirst: $0.id == firstID) }
+                    } header: {
+                        Text(FlightDate.title(section.date))
+                    }
                 }
+                moreRow
             }
         case .empty:
             ContentUnavailableView(
