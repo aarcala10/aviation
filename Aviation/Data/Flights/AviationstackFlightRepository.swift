@@ -58,7 +58,6 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
     let accessKey: String
     let transport: Transport
     
-    /// A real `URLSession` transport.
     static func live(accessKey: String, session: URLSession = .shared)
         -> AviationstackFlightRepository
     {
@@ -67,8 +66,7 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
         }
     }
     
-    // @concurrent keeps the JSON decoding off the caller's (main) actor, even if
-    // NonisolatedNonsendingByDefault is turned on later.
+    // Off the main actor even if NonisolatedNonsendingByDefault is turned on.
     @concurrent
     func departures(from iata: String, limit: Int, offset: Int) async throws -> [Flight] {
         var components = URLComponents(string: "https://api.aviationstack.com/v1/flights")!

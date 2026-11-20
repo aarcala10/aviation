@@ -1,7 +1,6 @@
 import Foundation
 import SwiftData
 
-/// Disk cache (SwiftData) in front of another `FlightRepository`.
 actor CachedFlightRepository: FlightRepository, ModelActor {
     nonisolated static let ttl: TimeInterval = 300
     

@@ -43,7 +43,6 @@ final class FlightsViewModel {
     /// What VoiceOver says in the heading: the city, or the airport name when the city is unknown.
     var spokenCity: String { getDepartures.city(forIATA: airport.iataCode) ?? airport.name }
     
-    /// The loaded flights grouped by date, newest day first.
     var sections: [FlightSection] {
         guard case .loaded(let flights) = state else { return [] }
         return flights.groupedByDate()
