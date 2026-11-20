@@ -9,7 +9,14 @@ final class FlightsViewModel {
         case failed(String)
     }
     
+    enum More: Equatable {
+        case available, loading
+        case failed(String)
+        case complete
+    }
+    
     private(set) var state: State = .idle
+    private(set) var more: More = .complete
     let airport: Airport
     private let getDepartures: GetDeparturesUseCase
     
@@ -41,12 +48,14 @@ final class FlightsViewModel {
         return flights.groupedByDate()
     }
     
+    func loadMore() async {}
+    
     func load() async {
         generation += 1
         let mine = generation
         state = .loading
         do {
-            let flights = try await getDepartures(from: airport.iataCode)
+            let flights = try await getDepartures(from: airport.iataCode).flights
             guard isCurrent(mine) else { return }
             state = flights.isEmpty ? .empty : .loaded(flights)
         } catch {

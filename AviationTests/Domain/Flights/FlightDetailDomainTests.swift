@@ -14,7 +14,8 @@ struct FlightDetailDomainTests {
         let flight = sample
         let repo = MockFlightRepository { _ in [flight] }
         let flights = try await GetDeparturesUseCase(repository: repo, cities: FakeCities())(
-            from: "MAD")
+            from: "MAD"
+        ).flights
         #expect(flights.first?.originCity == "Madrid")
     }
     
