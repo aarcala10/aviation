@@ -3,7 +3,7 @@
 App iOS (SwiftUI) que busca aeropuertos en una lista local.
 
 ## Lista de aeropuertos
-La búsqueda no usa red: lee `Aviation/Data/airports.json`, incluido en la app. Se generó el 2026-11-19 a partir de [OurAirports](https://ourairports.com/data/) (dominio público) con este filtro: `iata_code` no vacío, `type` en `large_airport`, `medium_airport` o `small_airport`, y `scheduled_service = yes`. Son 4007 aeropuertos (un JSON compacto `{n, c, i, k}`: nombre, ciudad, IATA y país ISO). El país se muestra en español con `Locale`.
+La búsqueda no usa red: lee `Aviation/Data/Airports/airports.json`, incluido en la app. Se generó el 2026-11-19 a partir de [OurAirports](https://ourairports.com/data/) (dominio público) con este filtro: `iata_code` no vacío, `type` en `large_airport`, `medium_airport` o `small_airport`, y `scheduled_service = yes`. Son 4007 aeropuertos (un JSON compacto `{n, c, i, k}`: nombre, ciudad, IATA y país ISO). El país se muestra en español con `Locale`.
 
 ## Clave de Aviationstack
 La clave solo hará falta para los vuelos (historia #3); el plan gratuito no permite consultar aeropuertos. Para tenerla preparada: copia `Config/Secrets.example.xcconfig` a `Config/Secrets.xcconfig` (está en `.gitignore`) y pon tu clave en `AVIATIONSTACK_ACCESS_KEY`. Se pasa al Info.plist (`AviationstackAccessKey`). Sin clave la app compila y busca aeropuertos igual.
