@@ -72,19 +72,10 @@ final class FlightsViewModel {
                 guard let next = page.nextOffset else { break }
                 offset = next
             }
-            if Task.isCancelled {
-                more = .available
-                state = .loaded(shown)
-                return
-            }
             state = .loaded(shown)
             more = nextOffset == nil ? .complete : .available
         } catch {
             guard mine == generation else { return }
-            if Task.isCancelled {
-                more = .available
-                return
-            }
             more = .failed(
                 SearchViewModel.message(
                     for: error, generic: String(localized: "No se han podido cargar más salidas")))

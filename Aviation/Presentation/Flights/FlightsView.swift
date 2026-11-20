@@ -63,17 +63,14 @@ struct FlightsView: View {
         case .available:
             // Its own branch, so every page brings a fresh row that triggers the next load. An
             // unstructured Task: a `.task` would be cancelled when the row turns into `.loading`.
-            ProgressView()
-                .frame(maxWidth: .infinity)
-                .accessibilityLabel(Text("Cargando más salidas"))
+            pagingIndicator
                 .onAppear { Task { await viewModel.loadMore() } }
         case .loading:
-            ProgressView()
-                .frame(maxWidth: .infinity)
-                .accessibilityLabel(Text("Cargando más salidas"))
+            pagingIndicator
         case .failed(let message):
             VStack(spacing: 8) {
                 Text(message)
+                    .multilineTextAlignment(.center)
                 Button("Reintentar") { Task { await viewModel.loadMore() } }
                     .frame(minHeight: 44)
             }
@@ -81,6 +78,12 @@ struct FlightsView: View {
         case .complete:
             EmptyView()
         }
+    }
+    
+    private var pagingIndicator: some View {
+        ProgressView()
+            .frame(maxWidth: .infinity)
+            .accessibilityLabel(Text("Cargando más salidas"))
     }
     
     private func announceScreen() {
