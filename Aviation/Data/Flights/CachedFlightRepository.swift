@@ -20,8 +20,27 @@ actor CachedFlightRepository: FlightRepository, ModelActor {
         self.now = now
     }
     
-    // RED stub: forwards without caching.
     func departures(from iata: String, limit: Int, offset: Int) async throws -> [Flight] {
-        try await wrapped.departures(from: iata, limit: limit, offset: offset)
+        let key = "\(iata)-\(limit)-\(offset)"
+        let existing = try? modelContext.fetch(
+            FetchDescriptor<CachedDepartures>(predicate: #Predicate { $0.key == key })
+        ).first
+        if let existing, now().timeIntervalSince(existing.fetchedAt) < Self.ttl,
+            let flights = try? JSONDecoder().decode([Flight].self, from: existing.flights)
+        {
+            return flights
+        }
+        let flights = try await wrapped.departures(from: iata, limit: limit, offset: offset)
+        // A failed save only loses the cache; the fresh flights are still returned.
+        if let data = try? JSONEncoder().encode(flights) {
+            if let existing {
+                existing.fetchedAt = now()
+                existing.flights = data
+            } else {
+                modelContext.insert(CachedDepartures(key: key, fetchedAt: now(), flights: data))
+            }
+            try? modelContext.save()
+        }
+        return flights
     }
 }
