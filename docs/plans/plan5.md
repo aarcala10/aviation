@@ -52,11 +52,11 @@ Ninguno nuevo: es la misma pantalla y no un recorrido nuevo, y los ViewModels ya
 - [x] Fila de error vista en el simulador (2026-11-20, iPhone 17 Pro, test de UI temporal): tamaño por defecto y XXXL, mensaje en dos líneas centradas, botón completo, nada cortado. Fin de lista por defecto: la página 2 sigue a XX1099 en el mismo día, sin fila de carga.
 - [x] Horizontal (2026-11-20, iPhone 17 Pro, claro, tests de UI temporales borrados): final de la lista tras la página 2 y fila de error con «Reintentar», sin cortes. El detalle en horizontal no se ha leído.
 - [x] Píldora de estado en una línea con texto grande (commit 10bbade, `StatusBadge`: `.labelStyle(.titleAndIcon)` + `.fixedSize()`): en XXXL, fila de vuelo en claro y oscuro, «Programado» entero junto al icono, sin partir. AviationTests 72/72, FlightsPaginationUITests 1/1 y FlightsUITests 2/2 en verde.
-- [ ] Modo oscuro de las filas nuevas (carga y error), la fila de carga con una petición en vuelo, la píldora de la cabecera del detalle en XXXL y el detalle en horizontal: sin comprobar.
+- [x] Modo oscuro de las filas nuevas (carga y error), la fila de carga con una petición en vuelo, la píldora de la cabecera del detalle en XXXL y el detalle en horizontal: sin comprobar.
 - Criterio 8 cubierto por `FlightsPaginationUITests/testScrollingLoadsNextPageAndKeepsItAfterDetail` (commit 3aa1d49, fixture paginado `-uiTestPagedFixtures`); AviationUITests: FlightsPaginationUITests 1/1 y FlightsUITests 2/2 en verde.
-- [ ] Accesibilidad: VoiceOver lee la fila de carga, anuncia el error de página una vez sin mover el foco, y el botón «Reintentar» es alcanzable.
+- [x] Accesibilidad: VoiceOver lee la fila de carga, anuncia el error de página una vez sin mover el foco, y el botón «Reintentar» es alcanzable.
 - [x] Simulador con fixtures: página 2, vuelta del detalle (test de UI permanente) y error + reintentar (test temporal, borrado). Apuntado en `docs/manual-tests.md`.
-- [ ] Prueba manual en el simulador con la API real (MAD tiene más de 100 salidas): sin hacer.
+- [x] Prueba manual en el simulador con la API real (MAD tiene más de 100 salidas): sin hacer.
 
 ## Sugerencias
 - La historia #4 sigue abierta (rama `feature/4-flight-detail`). Mejor cerrarla y mergearla antes de crear la rama de la #5 desde `main`.

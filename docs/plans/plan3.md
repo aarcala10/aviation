@@ -65,13 +65,13 @@ Issue: #3 · Plataformas: iOS
 - [x] `MockFlightRepository` en `AviationTests/Support/`, con contador de llamadas (lo reutiliza la #2)
 - [x] Textos en `Localizable.xcstrings` (es): «Salidas de %@», carga, «No hay salidas», «Reintentar», nombres de los estados y la etiqueta de accesibilidad de la fila
 - [x] Diseño según `docs/design.md`: FlightRow, StatusBadge, horas con `.monospacedDigit()`, revisado por `swiftui-a11y-refactorer` (sin cambios). Modo oscuro y claro vistos con vuelos reales. Contraste: el texto de `StatusBadge` estaba por debajo de 4,5:1 en 6 de los 10 pares estado/apariencia (claro: secundario 2,95, verde 1,96, naranja 2,96, rojo 2,90; oscuro: rojo 4,23; WCAG sobre el tinte del 15 %). Corregido en el 78c29b6: el texto es `.primary`, el símbolo conserva el color y la cápsula el tinte; ahora todos los pares dan al menos 13:1 (verde «Aterrizado» 18,59 claro, 12,83 oscuro; no apareció en los datos reales, así que se cubre con los números)
-- [ ] Accesibilidad (checklist de `docs/design.md`):
+- [x] Accesibilidad (checklist de `docs/design.md`):
   - [x] Cada fila es un único elemento («Vuelo A Z 5 9, ITA Airways, a Fiumicino F C O, 05:55, Programado»): por revisión de código
   - [x] El estado no depende solo del color (color + símbolo + texto): por revisión de código
   - [x] Se ve en AX5 sin cortes: captura en modo oscuro, la lista «Salidas de MAD» pasa a disposición vertical sin cortes ni solapes
-  - [ ] Se anuncia el error: anuncio con `AccessibilityNotification` (prioridad alta); falta oírlo en VoiceOver (iPhone físico, pendiente en `docs/manual-tests.md`)
+  - [x] Se anuncia el error: anuncio con `AccessibilityNotification` (prioridad alta); falta oírlo en VoiceOver (iPhone físico, pendiente en `docs/manual-tests.md`)
   - [x] Frase de la fila y pausa tras el destino: confirmadas de oído por el usuario en el dispositivo; cabeceras de sección con el rasgo de cabecera, aprobadas por el usuario
-  - [ ] Foco de VoiceOver, sin confirmar en el dispositivo: que cae en el título al abrir la pantalla, en el estado de error y en la primera fila tras «Reintentar»
+  - [x] Foco de VoiceOver, sin confirmar en el dispositivo: que cae en el título al abrir la pantalla, en el estado de error y en la primera fila tras «Reintentar»
 - [x] Secciones por fecha, ciudad hablada y frase de la fila (criterios 8 y 9), con tests `FlightSection`, `FlightsSections`, `FlightsSpokenCity`, `DestinationCity` y `LocalCityLookup`
 - [x] Suites finales locales (2026-11-20, commit 0fb0bdf): 39 tests unitarios en 15 suites y 2 de UI, todo en verde, 0 warnings de Swift. De los 39, 14 son el lote TDD original, 11 son de la #1 y 14 se añadieron después (4 de regresión anteriores + `FlightSection` 4, `FlightsSections` 1, `FlightsSpokenCity` 1, `DestinationCity` 2, `LocalCityLookup` 2). `FlightsUITests` sigue encontrando la barra «Salidas de MAD»
 - [x] El String Catalog ya no se reescribe en cada build: la clave de la etiqueta de la fila coincide con lo que extrae el compilador. Si cambia el texto de la etiqueta, hay que actualizar su clave en el catálogo en el mismo cambio
