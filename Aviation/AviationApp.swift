@@ -15,10 +15,9 @@ struct AviationApp: App {
         // Without a key the request fails with an API error and the flights screen shows it.
         let key = Bundle.main.object(forInfoDictionaryKey: "AviationstackAccessKey") as? String
         let live = AviationstackFlightRepository.live(accessKey: key ?? "")
-        // If the store cannot open, the app works without cache.
-        let flights: any FlightRepository =
-            (try? ModelContainer(for: CachedDepartures.self))
-            .map { CachedFlightRepository(modelContainer: $0, wrapping: live) } ?? live
+        let flights = CachedFlightRepository.wrapping(live) {
+            try ModelContainer(for: CachedDepartures.self)
+        }
         getDepartures = GetDeparturesUseCase(repository: flights, cities: local)
     }
     

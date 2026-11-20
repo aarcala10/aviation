@@ -20,6 +20,15 @@ actor CachedFlightRepository: FlightRepository, ModelActor {
         self.now = now
     }
     
+    /// The cached repository, or `live` itself when the store cannot open (app works without cache).
+    nonisolated static func wrapping(
+        _ live: any FlightRepository, in makeContainer: () throws -> ModelContainer,
+        now: @escaping @Sendable () -> Date = { Date() }
+    ) -> any FlightRepository {
+        guard let container = try? makeContainer() else { return live }
+        return CachedFlightRepository(modelContainer: container, wrapping: live, now: now)
+    }
+    
     func departures(from iata: String, limit: Int, offset: Int) async throws -> [Flight] {
         let key = "\(iata)-\(limit)-\(offset)"
         let existing = try? modelContext.fetch(
