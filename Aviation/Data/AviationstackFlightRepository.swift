@@ -4,7 +4,15 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
     typealias Transport = @Sendable (URLRequest) async throws -> Data
     
     private nonisolated struct Response: Decodable {
-        let data: [Item]
+        let data: [Lenient]
+    }
+    
+    /// One unreadable item must not discard the rest of the page: it decodes to nil and is dropped.
+    private nonisolated struct Lenient: Decodable {
+        let item: Item?
+        init(from decoder: Decoder) throws {
+            item = try? Item(from: decoder)
+        }
     }
     
     private nonisolated struct ErrorResponse: Decodable {
@@ -65,7 +73,7 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
         if let failure = try? decoder.decode(ErrorResponse.self, from: data) {
             throw failure.error
         }
-        return try decoder.decode(Response.self, from: data).data.map { item in
+        return try decoder.decode(Response.self, from: data).data.compactMap(\.item).map { item in
             Flight(
                 number: item.flight.iata ?? "",
                 airline: item.airline?.name ?? "",
