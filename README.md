@@ -181,6 +181,8 @@ La decodificación es **tolerante**: un vuelo ilegible se descarta sin perder el
 
 Páginas de 100 vuelos. Si una página trae menos, era la última. Si una página solo trae códigos compartidos o vuelos repetidos, se pide la siguiente para que la lista siempre crezca.
 
+> **Ojo: la API gratuita no pagina en orden.** `/v1/flights` devuelve las entradas en un orden interno, no por hora de salida: una página de MAD traía 15:00, 10:30, 12:20, 10:25… y después 17:05 → 16:20. Por eso una página nueva trae vuelos anteriores *y* posteriores, y como la lista ordena por hora dentro de cada día, algunos aparecen por encima de los que ya se veían. En el plan gratuito no hay forma de evitarlo: no existe parámetro de orden, `flight_date` y `dep_scheduled_time_dep` devuelven `function_access_restricted`, y `/v1/timetable` (que sí viene ordenado) solo admite 1 petición por minuto.
+
 ### UI tests sin red ni cuota
 
 Con `-uiTestFixtures` la app sirve `AviationTests/Fixtures/flights.json` en vez de llamar a la API (y `-uiTestPagedFixtures` sirve dos páginas para la paginación). Los fixtures solo se copian en Debug (`EXCLUDED_SOURCE_FILE_NAMES[config=Release]`).
