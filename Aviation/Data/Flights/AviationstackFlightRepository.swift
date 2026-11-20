@@ -66,7 +66,7 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
         }
     }
     
-    // Off the main actor even if NonisolatedNonsendingByDefault is turned on.
+    // Off the caller's (main) actor: async functions otherwise run on the caller's actor.
     @concurrent
     func departures(from iata: String, limit: Int, offset: Int) async throws -> [Flight] {
         var components = URLComponents(string: "https://api.aviationstack.com/v1/flights")!

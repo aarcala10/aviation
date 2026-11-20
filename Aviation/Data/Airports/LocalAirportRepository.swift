@@ -23,7 +23,7 @@ nonisolated struct LocalAirportRepository: AirportRepository, CityLookup {
             uniquingKeysWith: { first, _ in first })
     }
     
-    // Off the main actor even if NonisolatedNonsendingByDefault is turned on.
+    // Off the caller's (main) actor: async functions otherwise run on the caller's actor.
     @concurrent
     func airports(search: String) async throws -> [Airport] {
         let query = search.trimmingCharacters(in: .whitespacesAndNewlines)

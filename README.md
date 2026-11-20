@@ -142,9 +142,14 @@ Un solo target con tres capas (Data / Domain / Presentation) y, dentro de cada u
 SWIFT_VERSION: "6.0"
 SWIFT_STRICT_CONCURRENCY: complete
 SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+SWIFT_APPROACHABLE_CONCURRENCY: YES
 ```
 
-Todo corre en el hilo principal salvo lo que se marca `nonisolated`, y el compilador impide las carreras de datos. Las vistas y los ViewModels no necesitan anotaciones; los casos de uso y los repositorios son `nonisolated` y `Sendable`. El trabajo de CPU (filtrar ~4000 aeropuertos y decodificar el JSON de vuelos) va marcado `@concurrent`, para que salga del hilo principal de forma explícita, también si algún día se activa *Approachable Concurrency* (`NonisolatedNonsendingByDefault`, SE-0461).
+- **`MainActor` por defecto:** todo tipo vive en el hilo principal salvo que se marque `nonisolated`. Las vistas y los ViewModels no necesitan anotaciones; los casos de uso y los repositorios son `nonisolated` y `Sendable`.
+- **Approachable Concurrency** (`NonisolatedNonsendingByDefault`, SE-0461): una función `async` nonisolated se ejecuta en el actor de quien la llama en lugar de saltar a otro hilo. Es el comportamiento por defecto de los proyectos nuevos de Xcode 26 y evita saltos y errores de `Sendable` innecesarios.
+- **`@concurrent` para el trabajo de CPU:** con lo anterior, solo sale del hilo principal lo que se pide de forma explícita. Filtrar ~4000 aeropuertos (`LocalAirportRepository`) y decodificar el JSON de vuelos (`AviationstackFlightRepository`) van marcados `@concurrent`. El resto (casos de uso, ViewModels) se queda en el hilo principal porque solo esperan.
+
+El compilador comprueba todo esto en modo estricto: no puede haber carreras de datos.
 
 ### Repositorios sin `actor`: no tienen estado mutable
 
