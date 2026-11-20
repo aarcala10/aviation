@@ -28,7 +28,8 @@ nonisolated final class FlightsUITests: UIBase {
     func testOpenFlightShowsDetail() {
         openMadridDepartures()
         
-        let flight = app.cells.firstMatch
+        let flight = app.cells.containing(NSPredicate(format: "label CONTAINS 'AZ59'"))
+            .firstMatch
         XCTAssertTrue(flight.waitForExistence(timeout: 5))
         flight.tap()
         
