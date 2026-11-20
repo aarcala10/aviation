@@ -11,6 +11,9 @@ La clave solo hará falta para los vuelos (historia #3); el plan gratuito no per
 ## Salidas de un aeropuerto
 Al tocar un aeropuerto se piden sus salidas a `GET https://api.aviationstack.com/v1/flights?dep_iata=XXX&limit=100&offset=0` (solo la primera página). La hora de salida se muestra tal cual llega (HH:mm): la API manda la hora local del aeropuerto con un falso `+00:00`, así que no se convierte a ninguna zona horaria. Los vuelos con `flight.codeshared` no nulo (códigos compartidos) se ocultan para no repetir el vuelo operado.
 
+## Caché de vuelos
+`Data/Flights/CachedFlightRepository` envuelve al repositorio de Aviationstack y guarda las salidas en disco con SwiftData (`CachedDepartures`). Hay una entrada por petición (clave `IATA-limit-offset`) y vale 5 minutos; con 5 minutos exactos ya cuenta como caducada y se pide de nuevo, sustituyendo la entrada anterior. Sobrevive a cerrar la app. Los errores no se guardan, y una entrada ilegible se ignora y se pide a la red. Si el almacén no se puede abrir, `AviationApp` usa el repositorio real sin caché.
+
 ## Ejecutar y probar
 ```
 brew install xcodegen
