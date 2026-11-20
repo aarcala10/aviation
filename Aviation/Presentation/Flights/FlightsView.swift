@@ -9,8 +9,7 @@ struct FlightsView: View {
     @AccessibilityFocusState private var isTitleFocused: Bool
     
     var body: some View {
-        // The heading is the first element; ScreenChanged alone loses to the list's date headers,
-        // so the focus is also set on it explicitly (see `announceScreen`).
+        // The heading is the first element, so VoiceOver starts on it.
         VStack(alignment: .leading, spacing: 0) {
             Text("Salidas de \(viewModel.airport.iataCode)")
                 .font(.title)
@@ -31,7 +30,9 @@ struct FlightsView: View {
             await viewModel.load()
             if !Task.isCancelled { loadedAttempt = attempt }
         }
-        .onAppear(perform: announceScreen)
+        // ScreenChanged on its own lands on the element that is leaving, so the title takes the
+        // focus on appear (also when coming back from the detail).
+        .onAppear { isTitleFocused = true }
         .onChange(of: viewModel.state) { _, state in
             if case .loaded = state, attempt > 0 {
                 // After a retry the new content starts at its first flight.
@@ -50,11 +51,6 @@ struct FlightsView: View {
     
     private func announceScreen() {
         AccessibilityNotification.ScreenChanged().post()
-        // After the transition (push or pop), or VoiceOver keeps the tapped row or a date header.
-        Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(400))
-            isTitleFocused = true
-        }
     }
     
     @ViewBuilder private func row(_ flight: Flight, isFirst: Bool) -> some View {
