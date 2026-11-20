@@ -1,0 +1,4110 @@
+{
+  "pagination": {
+    "limit": 100,
+    "offset": 0,
+    "count": 100,
+    "total": 105
+  },
+  "data": [
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T06:00:00+00:00",
+        "estimated": "2026-11-20T06:00:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1000",
+        "iata": "XX1000",
+        "icao": "FXA1000",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T06:06:00+00:00",
+        "estimated": "2026-11-20T06:06:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1001",
+        "iata": "XX1001",
+        "icao": "FXA1001",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T06:12:00+00:00",
+        "estimated": "2026-11-20T06:12:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1002",
+        "iata": "XX1002",
+        "icao": "FXA1002",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T06:18:00+00:00",
+        "estimated": "2026-11-20T06:18:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1003",
+        "iata": "XX1003",
+        "icao": "FXA1003",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T06:24:00+00:00",
+        "estimated": "2026-11-20T06:24:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1004",
+        "iata": "XX1004",
+        "icao": "FXA1004",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T06:30:00+00:00",
+        "estimated": "2026-11-20T06:30:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1005",
+        "iata": "XX1005",
+        "icao": "FXA1005",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T06:36:00+00:00",
+        "estimated": "2026-11-20T06:36:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1006",
+        "iata": "XX1006",
+        "icao": "FXA1006",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T06:42:00+00:00",
+        "estimated": "2026-11-20T06:42:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1007",
+        "iata": "XX1007",
+        "icao": "FXA1007",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T06:48:00+00:00",
+        "estimated": "2026-11-20T06:48:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1008",
+        "iata": "XX1008",
+        "icao": "FXA1008",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T06:54:00+00:00",
+        "estimated": "2026-11-20T06:54:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1009",
+        "iata": "XX1009",
+        "icao": "FXA1009",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T07:00:00+00:00",
+        "estimated": "2026-11-20T07:00:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1010",
+        "iata": "XX1010",
+        "icao": "FXA1010",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T07:06:00+00:00",
+        "estimated": "2026-11-20T07:06:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1011",
+        "iata": "XX1011",
+        "icao": "FXA1011",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T07:12:00+00:00",
+        "estimated": "2026-11-20T07:12:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1012",
+        "iata": "XX1012",
+        "icao": "FXA1012",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T07:18:00+00:00",
+        "estimated": "2026-11-20T07:18:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1013",
+        "iata": "XX1013",
+        "icao": "FXA1013",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T07:24:00+00:00",
+        "estimated": "2026-11-20T07:24:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1014",
+        "iata": "XX1014",
+        "icao": "FXA1014",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T07:30:00+00:00",
+        "estimated": "2026-11-20T07:30:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1015",
+        "iata": "XX1015",
+        "icao": "FXA1015",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T07:36:00+00:00",
+        "estimated": "2026-11-20T07:36:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1016",
+        "iata": "XX1016",
+        "icao": "FXA1016",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T07:42:00+00:00",
+        "estimated": "2026-11-20T07:42:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1017",
+        "iata": "XX1017",
+        "icao": "FXA1017",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T07:48:00+00:00",
+        "estimated": "2026-11-20T07:48:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1018",
+        "iata": "XX1018",
+        "icao": "FXA1018",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T07:54:00+00:00",
+        "estimated": "2026-11-20T07:54:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1019",
+        "iata": "XX1019",
+        "icao": "FXA1019",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T08:00:00+00:00",
+        "estimated": "2026-11-20T08:00:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1020",
+        "iata": "XX1020",
+        "icao": "FXA1020",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T08:06:00+00:00",
+        "estimated": "2026-11-20T08:06:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1021",
+        "iata": "XX1021",
+        "icao": "FXA1021",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T08:12:00+00:00",
+        "estimated": "2026-11-20T08:12:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1022",
+        "iata": "XX1022",
+        "icao": "FXA1022",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T08:18:00+00:00",
+        "estimated": "2026-11-20T08:18:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1023",
+        "iata": "XX1023",
+        "icao": "FXA1023",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T08:24:00+00:00",
+        "estimated": "2026-11-20T08:24:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1024",
+        "iata": "XX1024",
+        "icao": "FXA1024",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T08:30:00+00:00",
+        "estimated": "2026-11-20T08:30:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1025",
+        "iata": "XX1025",
+        "icao": "FXA1025",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T08:36:00+00:00",
+        "estimated": "2026-11-20T08:36:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1026",
+        "iata": "XX1026",
+        "icao": "FXA1026",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T08:42:00+00:00",
+        "estimated": "2026-11-20T08:42:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1027",
+        "iata": "XX1027",
+        "icao": "FXA1027",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T08:48:00+00:00",
+        "estimated": "2026-11-20T08:48:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1028",
+        "iata": "XX1028",
+        "icao": "FXA1028",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T08:54:00+00:00",
+        "estimated": "2026-11-20T08:54:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1029",
+        "iata": "XX1029",
+        "icao": "FXA1029",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T09:00:00+00:00",
+        "estimated": "2026-11-20T09:00:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1030",
+        "iata": "XX1030",
+        "icao": "FXA1030",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T09:06:00+00:00",
+        "estimated": "2026-11-20T09:06:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1031",
+        "iata": "XX1031",
+        "icao": "FXA1031",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T09:12:00+00:00",
+        "estimated": "2026-11-20T09:12:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1032",
+        "iata": "XX1032",
+        "icao": "FXA1032",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T09:18:00+00:00",
+        "estimated": "2026-11-20T09:18:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1033",
+        "iata": "XX1033",
+        "icao": "FXA1033",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T09:24:00+00:00",
+        "estimated": "2026-11-20T09:24:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1034",
+        "iata": "XX1034",
+        "icao": "FXA1034",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T09:30:00+00:00",
+        "estimated": "2026-11-20T09:30:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1035",
+        "iata": "XX1035",
+        "icao": "FXA1035",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T09:36:00+00:00",
+        "estimated": "2026-11-20T09:36:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1036",
+        "iata": "XX1036",
+        "icao": "FXA1036",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T09:42:00+00:00",
+        "estimated": "2026-11-20T09:42:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1037",
+        "iata": "XX1037",
+        "icao": "FXA1037",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T09:48:00+00:00",
+        "estimated": "2026-11-20T09:48:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1038",
+        "iata": "XX1038",
+        "icao": "FXA1038",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T09:54:00+00:00",
+        "estimated": "2026-11-20T09:54:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1039",
+        "iata": "XX1039",
+        "icao": "FXA1039",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T10:00:00+00:00",
+        "estimated": "2026-11-20T10:00:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1040",
+        "iata": "XX1040",
+        "icao": "FXA1040",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T10:06:00+00:00",
+        "estimated": "2026-11-20T10:06:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1041",
+        "iata": "XX1041",
+        "icao": "FXA1041",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T10:12:00+00:00",
+        "estimated": "2026-11-20T10:12:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1042",
+        "iata": "XX1042",
+        "icao": "FXA1042",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T10:18:00+00:00",
+        "estimated": "2026-11-20T10:18:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1043",
+        "iata": "XX1043",
+        "icao": "FXA1043",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T10:24:00+00:00",
+        "estimated": "2026-11-20T10:24:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1044",
+        "iata": "XX1044",
+        "icao": "FXA1044",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T10:30:00+00:00",
+        "estimated": "2026-11-20T10:30:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1045",
+        "iata": "XX1045",
+        "icao": "FXA1045",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T10:36:00+00:00",
+        "estimated": "2026-11-20T10:36:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1046",
+        "iata": "XX1046",
+        "icao": "FXA1046",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T10:42:00+00:00",
+        "estimated": "2026-11-20T10:42:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1047",
+        "iata": "XX1047",
+        "icao": "FXA1047",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T10:48:00+00:00",
+        "estimated": "2026-11-20T10:48:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1048",
+        "iata": "XX1048",
+        "icao": "FXA1048",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T10:54:00+00:00",
+        "estimated": "2026-11-20T10:54:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1049",
+        "iata": "XX1049",
+        "icao": "FXA1049",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T11:00:00+00:00",
+        "estimated": "2026-11-20T11:00:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1050",
+        "iata": "XX1050",
+        "icao": "FXA1050",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T11:06:00+00:00",
+        "estimated": "2026-11-20T11:06:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1051",
+        "iata": "XX1051",
+        "icao": "FXA1051",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T11:12:00+00:00",
+        "estimated": "2026-11-20T11:12:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1052",
+        "iata": "XX1052",
+        "icao": "FXA1052",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T11:18:00+00:00",
+        "estimated": "2026-11-20T11:18:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1053",
+        "iata": "XX1053",
+        "icao": "FXA1053",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T11:24:00+00:00",
+        "estimated": "2026-11-20T11:24:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1054",
+        "iata": "XX1054",
+        "icao": "FXA1054",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T11:30:00+00:00",
+        "estimated": "2026-11-20T11:30:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1055",
+        "iata": "XX1055",
+        "icao": "FXA1055",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T11:36:00+00:00",
+        "estimated": "2026-11-20T11:36:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1056",
+        "iata": "XX1056",
+        "icao": "FXA1056",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T11:42:00+00:00",
+        "estimated": "2026-11-20T11:42:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1057",
+        "iata": "XX1057",
+        "icao": "FXA1057",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T11:48:00+00:00",
+        "estimated": "2026-11-20T11:48:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1058",
+        "iata": "XX1058",
+        "icao": "FXA1058",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T11:54:00+00:00",
+        "estimated": "2026-11-20T11:54:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1059",
+        "iata": "XX1059",
+        "icao": "FXA1059",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T12:00:00+00:00",
+        "estimated": "2026-11-20T12:00:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1060",
+        "iata": "XX1060",
+        "icao": "FXA1060",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T12:06:00+00:00",
+        "estimated": "2026-11-20T12:06:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1061",
+        "iata": "XX1061",
+        "icao": "FXA1061",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T12:12:00+00:00",
+        "estimated": "2026-11-20T12:12:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1062",
+        "iata": "XX1062",
+        "icao": "FXA1062",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T12:18:00+00:00",
+        "estimated": "2026-11-20T12:18:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1063",
+        "iata": "XX1063",
+        "icao": "FXA1063",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T12:24:00+00:00",
+        "estimated": "2026-11-20T12:24:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1064",
+        "iata": "XX1064",
+        "icao": "FXA1064",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T12:30:00+00:00",
+        "estimated": "2026-11-20T12:30:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1065",
+        "iata": "XX1065",
+        "icao": "FXA1065",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T12:36:00+00:00",
+        "estimated": "2026-11-20T12:36:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1066",
+        "iata": "XX1066",
+        "icao": "FXA1066",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T12:42:00+00:00",
+        "estimated": "2026-11-20T12:42:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1067",
+        "iata": "XX1067",
+        "icao": "FXA1067",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T12:48:00+00:00",
+        "estimated": "2026-11-20T12:48:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1068",
+        "iata": "XX1068",
+        "icao": "FXA1068",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T12:54:00+00:00",
+        "estimated": "2026-11-20T12:54:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1069",
+        "iata": "XX1069",
+        "icao": "FXA1069",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T13:00:00+00:00",
+        "estimated": "2026-11-20T13:00:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1070",
+        "iata": "XX1070",
+        "icao": "FXA1070",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T13:06:00+00:00",
+        "estimated": "2026-11-20T13:06:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1071",
+        "iata": "XX1071",
+        "icao": "FXA1071",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T13:12:00+00:00",
+        "estimated": "2026-11-20T13:12:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1072",
+        "iata": "XX1072",
+        "icao": "FXA1072",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T13:18:00+00:00",
+        "estimated": "2026-11-20T13:18:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1073",
+        "iata": "XX1073",
+        "icao": "FXA1073",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T13:24:00+00:00",
+        "estimated": "2026-11-20T13:24:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1074",
+        "iata": "XX1074",
+        "icao": "FXA1074",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T13:30:00+00:00",
+        "estimated": "2026-11-20T13:30:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1075",
+        "iata": "XX1075",
+        "icao": "FXA1075",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T13:36:00+00:00",
+        "estimated": "2026-11-20T13:36:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1076",
+        "iata": "XX1076",
+        "icao": "FXA1076",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T13:42:00+00:00",
+        "estimated": "2026-11-20T13:42:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1077",
+        "iata": "XX1077",
+        "icao": "FXA1077",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T13:48:00+00:00",
+        "estimated": "2026-11-20T13:48:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1078",
+        "iata": "XX1078",
+        "icao": "FXA1078",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T13:54:00+00:00",
+        "estimated": "2026-11-20T13:54:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1079",
+        "iata": "XX1079",
+        "icao": "FXA1079",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T14:00:00+00:00",
+        "estimated": "2026-11-20T14:00:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1080",
+        "iata": "XX1080",
+        "icao": "FXA1080",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T14:06:00+00:00",
+        "estimated": "2026-11-20T14:06:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1081",
+        "iata": "XX1081",
+        "icao": "FXA1081",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T14:12:00+00:00",
+        "estimated": "2026-11-20T14:12:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1082",
+        "iata": "XX1082",
+        "icao": "FXA1082",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T14:18:00+00:00",
+        "estimated": "2026-11-20T14:18:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1083",
+        "iata": "XX1083",
+        "icao": "FXA1083",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T14:24:00+00:00",
+        "estimated": "2026-11-20T14:24:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1084",
+        "iata": "XX1084",
+        "icao": "FXA1084",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T14:30:00+00:00",
+        "estimated": "2026-11-20T14:30:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1085",
+        "iata": "XX1085",
+        "icao": "FXA1085",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T14:36:00+00:00",
+        "estimated": "2026-11-20T14:36:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1086",
+        "iata": "XX1086",
+        "icao": "FXA1086",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T14:42:00+00:00",
+        "estimated": "2026-11-20T14:42:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1087",
+        "iata": "XX1087",
+        "icao": "FXA1087",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T14:48:00+00:00",
+        "estimated": "2026-11-20T14:48:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1088",
+        "iata": "XX1088",
+        "icao": "FXA1088",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T14:54:00+00:00",
+        "estimated": "2026-11-20T14:54:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1089",
+        "iata": "XX1089",
+        "icao": "FXA1089",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T15:00:00+00:00",
+        "estimated": "2026-11-20T15:00:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1090",
+        "iata": "XX1090",
+        "icao": "FXA1090",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T15:06:00+00:00",
+        "estimated": "2026-11-20T15:06:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1091",
+        "iata": "XX1091",
+        "icao": "FXA1091",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T15:12:00+00:00",
+        "estimated": "2026-11-20T15:12:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1092",
+        "iata": "XX1092",
+        "icao": "FXA1092",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T15:18:00+00:00",
+        "estimated": "2026-11-20T15:18:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1093",
+        "iata": "XX1093",
+        "icao": "FXA1093",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T15:24:00+00:00",
+        "estimated": "2026-11-20T15:24:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1094",
+        "iata": "XX1094",
+        "icao": "FXA1094",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T15:30:00+00:00",
+        "estimated": "2026-11-20T15:30:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1095",
+        "iata": "XX1095",
+        "icao": "FXA1095",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T15:36:00+00:00",
+        "estimated": "2026-11-20T15:36:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1096",
+        "iata": "XX1096",
+        "icao": "FXA1096",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T15:42:00+00:00",
+        "estimated": "2026-11-20T15:42:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1097",
+        "iata": "XX1097",
+        "icao": "FXA1097",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T15:48:00+00:00",
+        "estimated": "2026-11-20T15:48:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1098",
+        "iata": "XX1098",
+        "icao": "FXA1098",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2026-11-20",
+      "flight_status": "scheduled",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "2",
+        "gate": null,
+        "delay": 0,
+        "scheduled": "2026-11-20T15:54:00+00:00",
+        "estimated": "2026-11-20T15:54:00+00:00",
+        "actual": null
+      },
+      "arrival": {
+        "airport": "Leonardo Da Vinci (Fiumicino)",
+        "timezone": "Europe/Rome",
+        "iata": "FCO",
+        "icao": "LIRF",
+        "terminal": "1",
+        "gate": null,
+        "scheduled": null,
+        "delay": null,
+        "estimated": null,
+        "actual": null
+      },
+      "airline": {
+        "name": "Fixture Air",
+        "iata": "XX",
+        "icao": "FXA"
+      },
+      "flight": {
+        "number": "1099",
+        "iata": "XX1099",
+        "icao": "FXA1099",
+        "codeshared": null
+      },
+      "aircraft": null,
+      "live": null
+    }
+  ]
+}

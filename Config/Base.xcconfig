@@ -1,4 +1,4 @@
 AVIATIONSTACK_ACCESS_KEY = 
 #include? "Secrets.xcconfig"
 // The UI test fixture ships in Debug only.
-EXCLUDED_SOURCE_FILE_NAMES[config=Release] = flights.json
+EXCLUDED_SOURCE_FILE_NAMES[config=Release] = flights.json flights_page1.json flights_page2.json
