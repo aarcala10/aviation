@@ -28,3 +28,6 @@ Un solo target con tres carpetas:
 
 ## Cancelación
 `SearchView` lanza la búsqueda en `.task(id: query)`: cada cambio de texto cancela la tarea anterior. La tarea espera 300 ms (`Task.sleep`, debounce) antes de buscar. Si la búsqueda ya estaba en curso, `SearchViewModel` comprueba `Task.isCancelled` tras el `await` y no escribe estado, así que nunca se muestran resultados de una búsqueda antigua.
+
+## Concurrencia: `@concurrent`
+`LocalAirportRepository.airports(search:)` (filtrado de ~4000 registros) y `AviationstackFlightRepository.departures(...)` (decodificación del JSON) llevan `@concurrent`, para que el trabajo pesado no se ejecute en el hilo principal. Hoy no es estrictamente necesario: el proyecto no activa `NonisolatedNonsendingByDefault`, y en ese caso un método `nonisolated async` ya se ejecuta fuera del `MainActor`. Se mantiene por si se activa ese modo más adelante; si no se piensa activar, se pueden quitar ambos atributos.
