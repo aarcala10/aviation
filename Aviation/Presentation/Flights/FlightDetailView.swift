@@ -29,7 +29,7 @@ struct FlightDetailView: View {
                 row("Fecha", viewModel.date)
             }
         }
-        .navigationTitle(viewModel.number)
+        .navigationTitle(viewModel.title)
         .navigationBarTitleDisplayMode(.inline)
         // The header is the first element, so VoiceOver starts on it after a ScreenChanged post.
         .onAppear { AccessibilityNotification.ScreenChanged().post() }

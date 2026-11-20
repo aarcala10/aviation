@@ -95,4 +95,18 @@ struct FlightDetailViewModelTests {
             FlightDetailViewModel(flight: noCities).spokenHeader
                 == "Vuelo A Z 5 9. De MAD a Leonardo Da Vinci (Fiumicino). Retrasado.")
     }
+    
+    @Test("detail_emptyNumberOrAirline_showsDash")
+    func detail_emptyNumberOrAirline_showsDash() {
+        var flight = fullFlight()
+        #expect(FlightDetailViewModel(flight: flight).title == "AZ59")
+        flight = Flight(
+            number: "", airline: "", destinationIATA: "CAT", destinationName: "",
+            scheduledTime: "10:20", reportedStatus: .scheduled, delayMinutes: 0,
+            isCodeshare: false)
+        let viewModel = FlightDetailViewModel(flight: flight)
+        #expect(viewModel.number == "—")
+        #expect(viewModel.airline == "—")
+        #expect(viewModel.title == "Vuelo")
+    }
 }

@@ -33,8 +33,10 @@ final class FlightDetailViewModel {
     var arrivalEstimated: String { Self.text(flight.arrivalEstimatedTime) }
     var arrivalDelay: String { Self.delay(flight.arrivalDelayMinutes) }
     
-    var airline: String { flight.airline }
-    var number: String { flight.number }
+    /// Nav bar title: the number, or the word "Vuelo" when the API sends none.
+    var title: String { flight.number.isEmpty ? String(localized: "Vuelo") : flight.number }
+    var airline: String { Self.text(flight.airline) }
+    var number: String { Self.text(flight.number) }
     var date: String { FlightDate.title(flight.date) }
     
     /// What VoiceOver reads for the header: the city, else the airport name, else the code.
