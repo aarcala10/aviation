@@ -13,6 +13,9 @@ struct SearchView: View {
                     FlightsView(
                         viewModel: FlightsViewModel(airport: $0, getDepartures: getDepartures))
                 }
+                .navigationDestination(for: Flight.self) {
+                    FlightDetailView(viewModel: FlightDetailViewModel(flight: $0))
+                }
                 .searchable(text: $query, prompt: "Buscar aeropuerto")
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()

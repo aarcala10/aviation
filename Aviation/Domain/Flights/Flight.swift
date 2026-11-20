@@ -29,7 +29,7 @@ nonisolated struct Flight: Equatable, Sendable, Hashable, Identifiable, Codable 
     var arrivalEstimatedTime: String? = nil
     var arrivalDelayMinutes: Int? = nil
     /// Landed with an arrival delay.
-    var landedLate: Bool { false }
+    var landedLate: Bool { reportedStatus == .landed && (arrivalDelayMinutes ?? 0) > 0 }
     /// What VoiceOver says for the destination: the city, or the API's airport name.
     var spokenDestination: String { destinationCity.isEmpty ? destinationName : destinationCity }
     /// A page can repeat a flight number on other days or at other times.

@@ -2,6 +2,8 @@ import SwiftUI
 
 struct StatusBadge: View {
     let status: FlightStatus
+    /// Landed with an arrival delay: still green, but with a clock instead of the arrival plane.
+    var landedLate = false
     
     var body: some View {
         // Text in .primary: the status colours on their own 15 % tint fall below 4.5:1.
@@ -15,6 +17,12 @@ struct StatusBadge: View {
         .padding(.horizontal, 8)
         .padding(.vertical, 4)
         .background(color.opacity(0.15), in: .capsule)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(spokenTitle)
+    }
+    
+    var spokenTitle: String {
+        landedLate ? String(localized: "Aterrizado con retraso") : title
     }
     
     var title: String {
@@ -34,7 +42,7 @@ struct StatusBadge: View {
         switch status {
         case .scheduled, .unknown: "clock"
         case .active: "airplane"
-        case .landed: "airplane.arrival"
+        case .landed: landedLate ? "clock" : "airplane.arrival"
         case .delayed: "exclamationmark.circle"
         case .cancelled: "xmark.circle"
         case .diverted, .incident: "exclamationmark.triangle"

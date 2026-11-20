@@ -11,6 +11,7 @@ nonisolated struct GetDeparturesUseCase: Sendable {
             .map { flight in
                 var flight = flight
                 flight.destinationCity = city(forIATA: flight.destinationIATA) ?? ""
+                flight.originCity = flight.originIATA.flatMap(city(forIATA:)) ?? ""
                 return flight
             }
     }

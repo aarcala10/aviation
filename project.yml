@@ -13,7 +13,11 @@ targets:
   Aviation:
     type: application
     platform: iOS
-    sources: [Aviation]
+    sources:
+      - Aviation
+      # Debug only (excluded from Release in Config/Base.xcconfig): `-uiTestFixtures` serves it.
+      - path: AviationTests/Fixtures/flights.json
+        buildPhase: resources
     configFiles:
       Debug: Config/Base.xcconfig
       Release: Config/Base.xcconfig

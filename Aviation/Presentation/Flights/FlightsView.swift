@@ -42,22 +42,12 @@ struct FlightsView: View {
         AccessibilityNotification.ScreenChanged().post()
     }
     
-    /// "2026-11-20" -> «viernes, 20 de noviembre». Parsed and formatted in UTC so the day never
-    /// moves with the device time zone (the times are shown as received for the same reason).
-    private static func title(forDate date: String) -> String {
-        guard let day = try? Date(date, strategy: .iso8601.year().month().day()) else {
-            return String(localized: "Sin fecha")
-        }
-        var style = Date.FormatStyle(timeZone: .gmt).weekday(.wide).day().month(.wide)
-        style.calendar = Calendar(identifier: .gregorian)
-        return day.formatted(style)
-    }
-    
     @ViewBuilder private func row(_ flight: Flight, isFirst: Bool) -> some View {
         if isFirst {
-            FlightRow(flight: flight).accessibilityFocused($isFirstFlightFocused)
+            NavigationLink(value: flight) { FlightRow(flight: flight) }
+                .accessibilityFocused($isFirstFlightFocused)
         } else {
-            FlightRow(flight: flight)
+            NavigationLink(value: flight) { FlightRow(flight: flight) }
         }
     }
     
@@ -72,7 +62,7 @@ struct FlightsView: View {
                 Section {
                     ForEach(section.flights) { row($0, isFirst: $0.id == firstID) }
                 } header: {
-                    Text(Self.title(forDate: section.date))
+                    Text(FlightDate.title(section.date))
                 }
             }
         case .empty:
