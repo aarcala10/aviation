@@ -1,34 +1,35 @@
 import Foundation
 
-actor AviationstackFlightRepository: FlightRepository {
+nonisolated struct AviationstackFlightRepository: FlightRepository {
     typealias Transport = @Sendable (URLRequest) async throws -> Data
     
-    private struct Response: Decodable {
+    private nonisolated struct Response: Decodable {
         let data: [Item]
     }
     
-    private struct ErrorResponse: Decodable {
+    private nonisolated struct ErrorResponse: Decodable {
         let error: APIError
     }
     
-    private struct Item: Decodable {
-        struct Departure: Decodable {
+    private nonisolated struct Item: Decodable {
+        nonisolated struct Departure: Decodable {
             let scheduled: String
             let delay: Int?
         }
-        struct Arrival: Decodable {
+        nonisolated struct Arrival: Decodable {
             let airport: String?
             let iata: String?
         }
-        struct Airline: Decodable {
+        nonisolated struct Airline: Decodable {
             let name: String?
         }
-        struct Number: Decodable {
+        nonisolated struct Number: Decodable {
             let iata: String?
             let codeshared: Codeshared?
         }
-        struct Codeshared: Decodable {}
+        nonisolated struct Codeshared: Decodable {}
         
+        let flight_date: String?
         let flight_status: String?
         let departure: Departure
         let arrival: Arrival
@@ -39,11 +40,6 @@ actor AviationstackFlightRepository: FlightRepository {
     let accessKey: String
     let transport: Transport
     
-    init(accessKey: String, transport: @escaping Transport) {
-        self.accessKey = accessKey
-        self.transport = transport
-    }
-    
     /// A real `URLSession` transport.
     static func live(accessKey: String, session: URLSession = .shared)
         -> AviationstackFlightRepository
@@ -53,6 +49,9 @@ actor AviationstackFlightRepository: FlightRepository {
         }
     }
     
+    // @concurrent keeps the JSON decoding off the caller's (main) actor, even if
+    // NonisolatedNonsendingByDefault is turned on later.
+    @concurrent
     func departures(from iata: String, limit: Int, offset: Int) async throws -> [Flight] {
         var components = URLComponents(string: "https://api.aviationstack.com/v1/flights")!
         components.queryItems = [
@@ -76,7 +75,8 @@ actor AviationstackFlightRepository: FlightRepository {
                 reportedStatus: item.flight_status.flatMap(FlightStatus.init(rawValue:))
                     ?? .unknown,
                 delayMinutes: item.departure.delay ?? 0,
-                isCodeshare: item.flight.codeshared != nil)
+                isCodeshare: item.flight.codeshared != nil,
+                date: item.flight_date ?? "")
         }
     }
     

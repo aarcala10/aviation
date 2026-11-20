@@ -31,7 +31,7 @@ struct AviationApp: App {
     }
 }
 
-private struct UnavailableAirportRepository: AirportRepository {
+private nonisolated struct UnavailableAirportRepository: AirportRepository {
     func airports(search: String) async throws -> [Airport] {
         throw CocoaError(.fileReadNoSuchFile)
     }

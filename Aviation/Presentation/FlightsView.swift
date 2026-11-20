@@ -2,12 +2,13 @@ import SwiftUI
 
 struct FlightsView: View {
     @State var viewModel: FlightsViewModel
+    @State private var attempt = 0
     
     var body: some View {
         content
             .navigationTitle(Text("Salidas de \(viewModel.airport.iataCode)"))
             .navigationBarTitleDisplayMode(.inline)
-            .task { await viewModel.load() }
+            .task(id: attempt) { await viewModel.load() }
             .onChange(of: viewModel.state) { _, state in
                 if case .failed(let message) = state {
                     AccessibilityNotification.Announcement(message).post()
@@ -31,7 +32,7 @@ struct FlightsView: View {
             } description: {
                 Text(message)
             } actions: {
-                Button("Reintentar") { Task { await viewModel.load() } }
+                Button("Reintentar") { attempt += 1 }
             }
         }
     }

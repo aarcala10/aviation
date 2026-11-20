@@ -1,11 +1,11 @@
 import Foundation
 
 /// Searches a bundled airport list (JSON array of {n: name, c: city, i: IATA, k: ISO country}).
-actor LocalAirportRepository: AirportRepository {
+nonisolated struct LocalAirportRepository: AirportRepository {
     /// A 3-letter query can match hundreds of airports; the list only needs the best ones.
     private static let maxResults = 50
     
-    private struct Record: Decodable, Sendable {
+    private nonisolated struct Record: Decodable, Sendable {
         let n: String, c: String, i: String, k: String
     }
     
@@ -15,6 +15,8 @@ actor LocalAirportRepository: AirportRepository {
         records = try JSONDecoder().decode([Record].self, from: data)
     }
     
+    // @concurrent keeps the filtering of ~4000 records off the caller's (main) actor.
+    @concurrent
     func airports(search: String) async throws -> [Airport] {
         let query = search.trimmingCharacters(in: .whitespacesAndNewlines)
         let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]

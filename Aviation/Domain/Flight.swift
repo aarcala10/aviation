@@ -12,7 +12,10 @@ nonisolated struct Flight: Equatable, Sendable, Identifiable {
     let reportedStatus: FlightStatus
     let delayMinutes: Int
     let isCodeshare: Bool
-    var id: String { number }
+    /// "yyyy-MM-dd", as received (`flight_date`).
+    var date: String = ""
+    /// A page can repeat a flight number on other days or at other times.
+    var id: String { "\(number)-\(date)-\(scheduledTime)" }
     
     var status: FlightStatus {
         let canBeDelayed = reportedStatus == .scheduled || reportedStatus == .active
