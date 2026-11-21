@@ -59,8 +59,8 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
         }
         nonisolated struct Codeshared: Decodable {}
         
-        let flight_date: String?
-        let flight_status: String?
+        let flightDate: String?
+        let flightStatus: String?
         let departure: Departure
         let arrival: Arrival
         let airline: Airline?
@@ -95,15 +95,18 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
     // Off the caller's (main) actor: async functions otherwise run on the caller's actor.
     @concurrent
     func departures(from iata: String, limit: Int, offset: Int) async throws -> [Flight] {
-        var components = URLComponents(string: "https://api.aviationstack.com/v1/flights")!
+        guard var components = URLComponents(string: "https://api.aviationstack.com/v1/flights")
+        else { throw ServiceError.unknown }
         components.queryItems = [
             URLQueryItem(name: "access_key", value: accessKey),
             URLQueryItem(name: "dep_iata", value: iata),
             URLQueryItem(name: "limit", value: String(limit)),
             URLQueryItem(name: "offset", value: String(offset)),
         ]
-        let data = try await transport(URLRequest(url: components.url!))
+        guard let url = components.url else { throw ServiceError.unknown }
+        let data = try await transport(URLRequest(url: url))
         let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         if let failure = try? decoder.decode(ErrorResponse.self, from: data) {
             throw failure.error.serviceError
         }
@@ -114,11 +117,11 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
                 destinationIATA: item.arrival.iata ?? "",
                 destinationName: item.arrival.airport ?? "",
                 scheduledTime: Self.localTime(item.departure.scheduled),
-                reportedStatus: item.flight_status.flatMap(FlightStatus.init(rawValue:))
+                reportedStatus: item.flightStatus.flatMap(FlightStatus.init(rawValue:))
                     ?? .unknown,
                 delayMinutes: item.departure.delay ?? 0,
                 isCodeshare: item.flight.codeshared != nil,
-                date: item.flight_date ?? "",
+                date: item.flightDate ?? "",
                 originIATA: item.departure.iata,
                 originName: item.departure.airport,
                 departureTerminal: item.departure.terminal,

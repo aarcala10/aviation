@@ -1,0 +1,39 @@
+excluded:
+  - .claude
+  - .build
+  - DerivedData
+  - build
+  - Aviation.xcodeproj
+
+opt_in_rules:
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - empty_count
+  - first_where
+  - sorted_first_last
+  - contains_over_filter_count
+  - redundant_nil_coalescing
+  - unneeded_parentheses_in_closure_argument
+  - toggle_bool
+  - fatal_error_message
+  - private_swiftui_state
+  - accessibility_label_for_image
+  - accessibility_trait_for_button
+  - multiline_parameters
+  - closure_spacing
+  - overridden_super_call
+  - weak_delegate
+  - discouraged_optional_boolean
+
+trailing_whitespace:
+  ignores_empty_lines: true
+
+line_length:
+  warning: 140
+  error: 200
+  ignores_comments: true
+  ignores_urls: true
+
+identifier_name:
+  min_length: 2
+  excluded: [id, x, y]

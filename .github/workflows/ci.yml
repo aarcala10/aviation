@@ -7,6 +7,13 @@ on:
     branches: [main]
 
 jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    container: ghcr.io/realm/swiftlint:0.63.2
+    steps:
+      - uses: actions/checkout@v4
+      - run: swiftlint lint --reporter github-actions-logging
   test:
     name: test
     runs-on: macos-26

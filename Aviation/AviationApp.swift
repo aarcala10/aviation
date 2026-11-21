@@ -50,7 +50,8 @@ struct AviationApp: App {
         let first = fixture("flights_page1")
         let second = fixture("flights_page2")
         return AviationstackFlightRepository(accessKey: "") { request in
-            let offset = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)?
+            let offset = request.url
+                .flatMap { URLComponents(url: $0, resolvingAgainstBaseURL: false) }?
                 .queryItems?.first { $0.name == "offset" }?.value
             return offset == "100" ? second : first
         }
