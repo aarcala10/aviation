@@ -31,6 +31,17 @@ struct LocalAirportRepositoryTests {
         #expect(repo.city(forIATA: "FCO") == "Roma")
     }
     
+    @Test(
+        "airports_bundledData_localNamesAreTranslatedByCode",
+        arguments: [("CDG", "París"), ("NAP", "Nápoles"), ("VCE", "Venecia"), ("MXP", "Milán")])
+    func airports_bundledData_localNamesAreTranslatedByCode(iata: String, city: String)
+        async throws
+    {
+        let repo = try LocalAirportRepository(data: Fixture.bundledAirports())
+        #expect(repo.city(forIATA: iata) == city)
+        #expect(try await repo.airports(search: city).map(\.iataCode).contains(iata))
+    }
+    
     @Test("airports_exactCityMatch_comesBeforeNameMatches")
     func airports_exactCityMatch_comesBeforeNameMatches() async throws {
         let repo = try LocalAirportRepository(data: Fixture.bundledAirports())
