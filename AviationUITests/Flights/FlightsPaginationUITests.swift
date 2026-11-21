@@ -6,7 +6,7 @@ nonisolated final class FlightsPaginationUITests: UIBase {
     }
     
     @MainActor
-    func testScrollingLoadsNextPageAndKeepsItAfterDetail() {
+    func testLoadMoreButtonLoadsNextPageAndKeepsItAfterDetail() {
         let search = app.searchFields.firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 5))
         search.tap()
@@ -17,11 +17,15 @@ nonisolated final class FlightsPaginationUITests: UIBase {
         madrid.tap()
         XCTAssertTrue(app.navigationBars["Salidas de MAD"].waitForExistence(timeout: 5))
         
-        // The last flight of page 2 (offset 100 serves 5 flights).
+        let loadMore = app.buttons["Cargar más salidas"]
+        for _ in 0..<40 where !loadMore.exists { app.swipeUp() }
+        XCTAssertTrue(loadMore.waitForExistence(timeout: 5))
+        loadMore.tap()
+        
         let last = app.cells.containing(NSPredicate(format: "label CONTAINS 'XX2004'")).firstMatch
         for _ in 0..<40 where !last.exists { app.swipeUp() }
         XCTAssertTrue(last.waitForExistence(timeout: 5))
-        XCTAssertFalse(app.activityIndicators["Cargando más salidas"].exists)
+        XCTAssertFalse(loadMore.exists)
         screenshot("departures-end-of-list")
         
         last.tap()
