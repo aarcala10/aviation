@@ -53,7 +53,7 @@ struct FlightRow: View {
         .accessibilityElement(children: .combine)
         .accessibilityLabel(
             Text(
-                "Vuelo \(spokenNumber), \(flight.airline). A \(flight.spokenDestination). \(departure). \(StatusBadge(status: badgeStatus, landedLate: flight.landedLate).spokenTitle)\(departedLate ? String(localized: ", retrasado") : "")."
+                "Vuelo \(spokenNumber), \(flight.airline). A \(flight.spokenDestination). \(departure). \(badgeStatus.spokenTitle(landedLate: flight.landedLate))\(departedLate ? String(localized: ", retrasado") : "")."
             ))
     }
 }

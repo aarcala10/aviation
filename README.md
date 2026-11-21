@@ -138,6 +138,8 @@ flowchart TB
 
 Un solo target con tres capas (Data / Domain / Presentation) y, dentro de cada una, una carpeta por funcionalidad (`Airports`, `Flights`, `Search`, `Shared`). Los tests siguen la misma estructura.
 
+**¿Por qué MVVM con casos de uso?** Los ViewModels se prueban sin vistas, y el caso de uso concentra la lógica de negocio: filtra los codeshares y rellena las ciudades. La caché es un decorador en Data, así que Domain y Presentation no saben que existe. Descarté TCA (una dependencia extra, demasiado para tres pantallas) y poner la lógica en las vistas (no se puede probar). `FlightDetailViewModel` es un `struct` porque no guarda estado.
+
 ### Pensada para concurrencia estricta y `MainActor` por defecto
 
 ```yaml
