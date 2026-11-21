@@ -187,7 +187,7 @@ Páginas de 100 vuelos que se piden solo al pulsar «Cargar más salidas»: con 
 
 ### UI tests sin red ni cuota
 
-Con `-uiTestFixtures` la app sirve `AviationTests/Fixtures/flights.json` en vez de llamar a la API (y `-uiTestPagedFixtures` sirve dos páginas para la paginación). Los fixtures solo se copian en Debug (`EXCLUDED_SOURCE_FILE_NAMES[config=Release]`).
+Con `-uiTestFixtures` la app sirve `AviationTests/Fixtures/flights.json` en vez de llamar a la API (y `-uiTestPagedFixtures` sirve dos páginas para la paginación). Los fixtures solo se copian en Debug (`EXCLUDED_SOURCE_FILE_NAMES[config=Release]`) y el código de `-uiTestFixtures` va dentro de `#if DEBUG`, así que Release no lleva ni los datos ni la rama.
 
 ### Diseño nativo y sin dependencias
 

@@ -14,18 +14,27 @@ struct AviationApp: App {
                     ?? UnavailableAirportRepository()))
         // Without a key the request fails with an API error and the flights screen shows it.
         let flights: any FlightRepository
+        #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("-uiTestFixtures") {
             flights = Self.fixtureRepository()
         } else {
-            let key = Bundle.main.object(forInfoDictionaryKey: "AviationstackAccessKey") as? String
-            let live = AviationstackFlightRepository.live(accessKey: key ?? "")
-            flights = CachedFlightRepository.wrapping(live) {
-                try ModelContainer(for: CachedDepartures.self)
-            }
+            flights = Self.liveRepository()
         }
+        #else
+        flights = Self.liveRepository()
+        #endif
         getDepartures = GetDeparturesUseCase(repository: flights, cities: local)
     }
     
+    private static func liveRepository() -> any FlightRepository {
+        let key = Bundle.main.object(forInfoDictionaryKey: "AviationstackAccessKey") as? String
+        let live = AviationstackFlightRepository.live(accessKey: key ?? "")
+        return CachedFlightRepository.wrapping(live) {
+            try ModelContainer(for: CachedDepartures.self)
+        }
+    }
+    
+    #if DEBUG
     /// UI tests: bundled JSON (Debug builds only) instead of the network, no cache. `-uiTestPagedFixtures`
     /// serves 100 flights at offset 0 and 5 at offset 100.
     private static func fixtureRepository() -> AviationstackFlightRepository {
@@ -46,6 +55,7 @@ struct AviationApp: App {
             return offset == "100" ? second : first
         }
     }
+    #endif
     
     var body: some Scene {
         WindowGroup { SearchView(viewModel: viewModel, getDepartures: getDepartures) }
