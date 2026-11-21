@@ -13,6 +13,25 @@ struct DelayPill: View {
     }
 }
 
+extension FlightStatus {
+    var title: String {
+        switch self {
+        case .scheduled: String(localized: "Programado")
+        case .active: String(localized: "En vuelo")
+        case .landed: String(localized: "Aterrizado")
+        case .delayed: String(localized: "Retrasado")
+        case .cancelled: String(localized: "Cancelado")
+        case .diverted: String(localized: "Desviado")
+        case .incident: String(localized: "Incidente")
+        case .unknown: String(localized: "Desconocido")
+        }
+    }
+    
+    func spokenTitle(landedLate: Bool) -> String {
+        landedLate ? String(localized: "Aterrizado con retraso") : title
+    }
+}
+
 struct StatusBadge: View {
     let status: FlightStatus
     /// Landed with an arrival delay: still green, but with a clock instead of the arrival plane.
@@ -22,7 +41,7 @@ struct StatusBadge: View {
         // Text in .primary: the status colours on their own 15 % tint fall below 4.5:1.
         // The colour stays on the symbol and the capsule; the text names the status.
         Label {
-            Text(title)
+            Text(status.title)
         } icon: {
             Image(systemName: symbol).foregroundStyle(color)
         }
@@ -35,24 +54,7 @@ struct StatusBadge: View {
         .padding(.vertical, 4)
         .background(color.opacity(0.15), in: .capsule)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(spokenTitle)
-    }
-    
-    var spokenTitle: String {
-        landedLate ? String(localized: "Aterrizado con retraso") : title
-    }
-    
-    var title: String {
-        switch status {
-        case .scheduled: String(localized: "Programado")
-        case .active: String(localized: "En vuelo")
-        case .landed: String(localized: "Aterrizado")
-        case .delayed: String(localized: "Retrasado")
-        case .cancelled: String(localized: "Cancelado")
-        case .diverted: String(localized: "Desviado")
-        case .incident: String(localized: "Incidente")
-        case .unknown: String(localized: "Desconocido")
-        }
+        .accessibilityLabel(status.spokenTitle(landedLate: landedLate))
     }
     
     private var symbol: String {

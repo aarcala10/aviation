@@ -18,13 +18,14 @@ struct DestinationCityTests {
         let flights = try await GetDeparturesUseCase(repository: repo, cities: FakeCities())(
             from: "MAD"
         ).flights
-        #expect(flights.map(\.spokenDestination) == ["Rome", "Zed Airport"])
+        #expect(flights.map(\.destinationCity) == ["Rome", ""])
     }
     
     @Test("departures_withoutLookup_keepsTheApiName")
     func departures_withoutLookup_keepsTheApiName() async throws {
         let repo = MockFlightRepository { _ in [.sample()] }
         let flights = try await GetDeparturesUseCase(repository: repo)(from: "MAD").flights
-        #expect(flights.first?.spokenDestination == "Leonardo Da Vinci (Fiumicino)")
+        #expect(flights.first?.destinationCity == "")
+        #expect(flights.first?.destinationName == "Leonardo Da Vinci (Fiumicino)")
     }
 }

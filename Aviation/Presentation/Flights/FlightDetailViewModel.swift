@@ -1,5 +1,5 @@
-/// Read-only projection of a flight: no mutable state, so no `@Observable`.
-final class FlightDetailViewModel {
+/// Read-only projection of a flight: no mutable state, so a struct and no `@Observable`.
+struct FlightDetailViewModel {
     let flight: Flight
     
     init(flight: Flight) { self.flight = flight }
@@ -48,8 +48,7 @@ final class FlightDetailViewModel {
         let destination =
             [flight.spokenDestination, flight.destinationIATA]
             .first { !$0.isEmpty } ?? ""
-        let status = StatusBadge(status: flight.status, landedLate: flight.landedLate)
-            .spokenTitle
+        let status = flight.status.spokenTitle(landedLate: flight.landedLate)
         return String(localized: "Vuelo \(number). De \(origin) a \(destination). \(status).")
     }
 }
