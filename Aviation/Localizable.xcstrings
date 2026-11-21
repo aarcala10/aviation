@@ -86,6 +86,9 @@
     "Desviado" : {
       "extractionState" : "manual"
     },
+    "El servicio no responde. Inténtalo más tarde" : {
+      "extractionState" : "manual"
+    },
     "En vuelo" : {
       "extractionState" : "manual"
     },
@@ -99,6 +102,9 @@
       "extractionState" : "manual"
     },
     "Estimada" : {
+      "extractionState" : "manual"
+    },
+    "Falta la clave de la API: añádela en Config/Secrets.xcconfig" : {
       "extractionState" : "manual"
     },
     "Fecha" : {

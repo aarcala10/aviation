@@ -40,11 +40,15 @@ final class SearchViewModel {
         generic: String = String(localized: "No se ha podido completar la búsqueda")
     ) -> String {
         switch error {
-        case let api as APIError where api.code.contains("limit"):
-            String(localized: "Se ha agotado la cuota de la API")
-        case let api as APIError where api.code.contains("access_key"):
+        case ServiceError.missingKey:
+            String(localized: "Falta la clave de la API: añádela en Config/Secrets.xcconfig")
+        case ServiceError.invalidKey:
             String(localized: "La clave de la API no es válida")
-        case is URLError:
+        case ServiceError.quotaExceeded:
+            String(localized: "Se ha agotado la cuota de la API")
+        case ServiceError.server:
+            String(localized: "El servicio no responde. Inténtalo más tarde")
+        case ServiceError.offline, is URLError:
             String(localized: "Comprueba tu conexión")
         default:
             generic

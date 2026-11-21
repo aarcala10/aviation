@@ -1,3 +1,4 @@
+import Foundation
 import Testing
 
 @testable import Aviation
@@ -23,12 +24,36 @@ struct SearchViewModelTests {
     
     @Test("search_failure_showsError")
     func search_failure_showsError() async {
-        let vm = makeVM(MockAirportRepository { _ in throw APIError(code: "x", message: "boom") })
+        let vm = makeVM(MockAirportRepository { _ in throw ServiceError.unknown })
         await vm.search("madrid")
         guard case .failed = vm.state else {
             Issue.record("expected .failed, got \(vm.state)")
             return
         }
+    }
+    
+    @Test(
+        "message_mapsEachServiceError",
+        arguments: [
+            (
+                ServiceError.missingKey,
+                "Falta la clave de la API: añádela en Config/Secrets.xcconfig"
+            ),
+            (.invalidKey, "La clave de la API no es válida"),
+            (.quotaExceeded, "Se ha agotado la cuota de la API"),
+            (.server, "El servicio no responde. Inténtalo más tarde"),
+            (.offline, "Comprueba tu conexión"),
+            (.unknown, "generic"),
+        ])
+    func message_mapsEachServiceError(error: ServiceError, expected: String) {
+        #expect(SearchViewModel.message(for: error, generic: "generic") == expected)
+    }
+    
+    @Test("message_urlError_isOffline")
+    func message_urlError_isOffline() {
+        #expect(
+            SearchViewModel.message(for: URLError(.notConnectedToInternet))
+                == "Comprueba tu conexión")
     }
     
     @Test("search_shortQuery_staysIdle")
