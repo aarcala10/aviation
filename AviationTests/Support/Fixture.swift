@@ -9,4 +9,9 @@ enum Fixture {
             Bundle(for: BundleToken.self).url(forResource: name, withExtension: "json"))
         return try Data(contentsOf: url)
     }
+    
+    static func bundledAirports() throws -> Data {
+        let url = try #require(Bundle.main.url(forResource: "airports", withExtension: "json"))
+        return try Data(contentsOf: url)
+    }
 }

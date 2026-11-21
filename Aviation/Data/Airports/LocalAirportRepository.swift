@@ -31,10 +31,16 @@ nonisolated struct LocalAirportRepository: AirportRepository, CityLookup {
         let matches = records.filter { record in
             [record.n, record.c, record.i].contains { $0.range(of: query, options: options) != nil }
         }
-        let exactCode = matches.filter { $0.i.caseInsensitiveCompare(query) == .orderedSame }
-        let others = matches.filter { $0.i.caseInsensitiveCompare(query) != .orderedSame }
+        func rank(_ record: Record) -> Int {
+            if record.i.caseInsensitiveCompare(query) == .orderedSame { return 0 }
+            if record.c.compare(query, options: options) == .orderedSame { return 1 }
+            return 2
+        }
+        let ordered = matches.enumerated().sorted {
+            (rank($0.element), $0.offset) < (rank($1.element), $1.offset)
+        }.map(\.element)
         let spanish = Locale(identifier: "es")
-        return (exactCode + others).prefix(Self.maxResults).map {
+        return ordered.prefix(Self.maxResults).map {
             Airport(
                 name: $0.n, iataCode: $0.i,
                 country: spanish.localizedString(forRegionCode: $0.k) ?? $0.k)
