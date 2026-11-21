@@ -9,4 +9,10 @@ enum Fixture {
             Bundle(for: BundleToken.self).url(forResource: name, withExtension: "json"))
         return try Data(contentsOf: url)
     }
+    
+    static func bundledAirports(filePath: String = #filePath) throws -> Data {
+        let root = URL(fileURLWithPath: filePath).deletingLastPathComponent()
+            .deletingLastPathComponent().deletingLastPathComponent()
+        return try Data(contentsOf: root.appending(path: "Aviation/Data/Airports/airports.json"))
+    }
 }
