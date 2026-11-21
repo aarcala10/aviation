@@ -175,7 +175,7 @@ El plan gratuito de Aviationstack no permite `/airports`. La lista local hace ad
 
 `AviationstackFlightRepository` recibe un `transport: (URLRequest) async throws -> Data`. En producción es `URLSession`; en los tests, un closure que devuelve un fixture. No hace falta `URLProtocol`.
 
-La decodificación es **tolerante**: un vuelo ilegible se descarta sin perder el resto de la página. Las respuestas de error de la API se convierten en `APIError` y el ViewModel las traduce («Se ha agotado la cuota de la API», «La clave de la API no es válida», «Comprueba tu conexión»).
+La decodificación es **tolerante**: un vuelo ilegible se descarta sin perder el resto de la página. Las respuestas de error de la API se convierten en un enum `ServiceError` en Domain y el ViewModel las traduce («Se ha agotado la cuota de la API», «La clave de la API no es válida», «Comprueba tu conexión»).
 
 ### Paginación
 

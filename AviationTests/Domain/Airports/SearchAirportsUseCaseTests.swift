@@ -21,8 +21,8 @@ struct SearchAirportsUseCaseTests {
     
     @Test("search_propagatesRepositoryError")
     func search_propagatesRepositoryError() async {
-        let repo = MockAirportRepository { _ in throw APIError(code: "x", message: "boom") }
-        await #expect(throws: APIError(code: "x", message: "boom")) {
+        let repo = MockAirportRepository { _ in throw ServiceError.unknown }
+        await #expect(throws: ServiceError.unknown) {
             try await SearchAirportsUseCase(repository: repo)("madrid")
         }
     }

@@ -16,7 +16,19 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
     }
     
     private nonisolated struct ErrorResponse: Decodable {
-        let error: APIError
+        let error: Failure
+        
+        nonisolated struct Failure: Decodable {
+            let code: String
+            let message: String
+            
+            var serviceError: ServiceError {
+                if code.contains("missing_access_key") { return .missingKey }
+                if code.contains("access_key") { return .invalidKey }
+                if code.contains("limit") { return .quotaExceeded }
+                return .unknown
+            }
+        }
     }
     
     private nonisolated struct Item: Decodable {
@@ -62,8 +74,22 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
         -> AviationstackFlightRepository
     {
         AviationstackFlightRepository(accessKey: accessKey) { request in
-            try await session.data(for: request).0
+            if accessKey.isEmpty { throw ServiceError.missingKey }
+            do {
+                let (data, response) = try await session.data(for: request)
+                return try validate(data, response)
+            } catch let error as URLError {
+                throw error.code == .cancelled ? CancellationError() : ServiceError.offline
+            }
         }
+    }
+    
+    /// 5xx has no JSON body to read; 4xx keeps the data so the API's error body is decoded.
+    static func validate(_ data: Data, _ response: URLResponse) throws -> Data {
+        if let http = response as? HTTPURLResponse, (500...599).contains(http.statusCode) {
+            throw ServiceError.server
+        }
+        return data
     }
     
     // Off the caller's (main) actor: async functions otherwise run on the caller's actor.
@@ -79,7 +105,7 @@ nonisolated struct AviationstackFlightRepository: FlightRepository {
         let data = try await transport(URLRequest(url: components.url!))
         let decoder = JSONDecoder()
         if let failure = try? decoder.decode(ErrorResponse.self, from: data) {
-            throw failure.error
+            throw failure.error.serviceError
         }
         return try decoder.decode(Response.self, from: data).data.compactMap(\.item).map { item in
             Flight(

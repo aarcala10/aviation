@@ -61,15 +61,55 @@ struct AviationstackFlightRepositoryTests {
         #expect(flights.map(\.isCodeshare) == [true, true, false])
     }
     
-    @Test("departures_errorBody_throwsAPIError")
-    func departures_errorBody_throwsAPIError() async throws {
-        let body = Data(
-            #"{"error":{"code":"usage_limit_reached","message":"Quota exceeded"}}"#.utf8)
+    @Test(
+        "departures_errorBody_throwsMatchingServiceError",
+        arguments: [
+            ("usage_limit_reached", ServiceError.quotaExceeded),
+            ("rate_limit_reached", .quotaExceeded),
+            ("missing_access_key", .missingKey),
+            ("invalid_access_key", .invalidKey),
+            ("something_else", .unknown),
+        ])
+    func departures_errorBody_throwsMatchingServiceError(
+        code: String, expected: ServiceError
+    ) async throws {
+        let body = Data(#"{"error":{"code":"\#(code)","message":"boom"}}"#.utf8)
         let repo = try makeRepo(body: body)
-        await #expect(
-            throws: APIError(code: "usage_limit_reached", message: "Quota exceeded")
-        ) {
+        await #expect(throws: expected) {
             try await repo.departures(from: "MAD", limit: 20, offset: 0)
         }
+    }
+    
+    @Test("live_emptyKey_throwsMissingKeyWithoutRequest")
+    func live_emptyKey_throwsMissingKeyWithoutRequest() async {
+        let repo = AviationstackFlightRepository.live(accessKey: "")
+        await #expect(throws: ServiceError.missingKey) {
+            try await repo.departures(from: "MAD", limit: 20, offset: 0)
+        }
+    }
+    
+    private func response(_ status: Int) -> URLResponse {
+        HTTPURLResponse(
+            url: URL(string: "https://api.aviationstack.com")!, statusCode: status,
+            httpVersion: nil, headerFields: nil)!
+    }
+    
+    @Test("validate_ok_returnsData")
+    func validate_ok_returnsData() throws {
+        let data = Data("ok".utf8)
+        #expect(try AviationstackFlightRepository.validate(data, response(200)) == data)
+    }
+    
+    @Test("validate_5xx_throwsServer")
+    func validate_5xx_throwsServer() {
+        #expect(throws: ServiceError.server) {
+            try AviationstackFlightRepository.validate(Data(), response(503))
+        }
+    }
+    
+    @Test("validate_4xx_returnsDataForErrorBody")
+    func validate_4xx_returnsDataForErrorBody() throws {
+        let data = Data(#"{"error":{"code":"invalid_access_key","message":"x"}}"#.utf8)
+        #expect(try AviationstackFlightRepository.validate(data, response(401)) == data)
     }
 }

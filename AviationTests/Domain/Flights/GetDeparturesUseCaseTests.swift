@@ -51,8 +51,8 @@ struct GetDeparturesUseCaseTests {
     
     @Test("departures_propagatesRepositoryError")
     func departures_propagatesRepositoryError() async {
-        let repo = MockFlightRepository { _ in throw APIError(code: "x", message: "boom") }
-        await #expect(throws: APIError(code: "x", message: "boom")) {
+        let repo = MockFlightRepository { _ in throw ServiceError.unknown }
+        await #expect(throws: ServiceError.unknown) {
             try await GetDeparturesUseCase(repository: repo)(from: "MAD")
         }
     }
