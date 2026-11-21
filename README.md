@@ -238,4 +238,6 @@ sequenceDiagram
   - **Data:** decodificación, caché (uso, expiración, entrada ilegible, almacén que no abre) y búsqueda local.
   - **Presentation:** estados de los ViewModels, incluida la cancelación.
 - **XCUITest** solo para el camino feliz (buscar → salidas → detalle → paginación), con fixtures.
-- **GitHub Actions** (`macos-26`) ejecuta toda la suite en cada PR contra `main`. Sin CI en verde no se mergea.
+- **GitHub Actions** ejecuta dos jobs en cada PR contra `main`. Sin CI en verde no se mergea:
+  - `test` (`macos-26`): toda la suite.
+  - `lint` (`ubuntu-latest`, SwiftLint `0.63.2` fijado en la imagen de Docker): falla solo con errores, no con avisos. La configuración está en `.swiftlint.yml`; en local, `swiftlint lint`.
