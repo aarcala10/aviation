@@ -17,6 +17,10 @@ struct FlightRow: View {
     private var departedLate: Bool { flight.reportedStatus == .active && flight.delayMinutes > 0 }
     private var badgeStatus: FlightStatus { departedLate ? .active : flight.status }
     
+    private var spokenNumber: Text {
+        flight.number.isEmpty ? Text("sin número") : Text(flight.number).speechSpellsOutCharacters()
+    }
+    
     var body: some View {
         let layout =
             dynamicTypeSize.isAccessibilitySize
@@ -24,7 +28,11 @@ struct FlightRow: View {
             : AnyLayout(HStackLayout(alignment: .top, spacing: 12))
         layout {
             VStack(alignment: .leading, spacing: 4) {
-                Text(flight.number).font(.headline).speechSpellsOutCharacters()
+                if flight.number.isEmpty {
+                    Text("Sin número").font(.headline).foregroundStyle(.secondary)
+                } else {
+                    Text(flight.number).font(.headline).speechSpellsOutCharacters()
+                }
                 Text(flight.airline).font(.subheadline).foregroundStyle(.secondary)
                 Text(
                     "\(Text(flight.destinationIATA).font(.subheadline.weight(.semibold).monospaced()).foregroundStyle(Color.accentColor)) \(flight.destinationName)"
@@ -45,7 +53,7 @@ struct FlightRow: View {
         .accessibilityElement(children: .combine)
         .accessibilityLabel(
             Text(
-                "Vuelo \(Text(flight.number).speechSpellsOutCharacters()), \(flight.airline). A \(flight.spokenDestination).\(departure). \(StatusBadge(status: badgeStatus, landedLate: flight.landedLate).spokenTitle)\(departedLate ? String(localized: ", retrasado") : "")."
+                "Vuelo \(spokenNumber), \(flight.airline). A \(flight.spokenDestination). \(departure). \(StatusBadge(status: badgeStatus, landedLate: flight.landedLate).spokenTitle)\(departedLate ? String(localized: ", retrasado") : "")."
             ))
     }
 }

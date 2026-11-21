@@ -5,6 +5,8 @@ struct FlightsView: View {
     @State private var attempt = 0
     /// The attempt whose result is on screen, so coming back from a detail does not reload.
     @State private var loadedAttempt: Int?
+    @State private var moreRequest = 0
+    @State private var handledMoreRequest = 0
     @AccessibilityFocusState private var isFirstFlightFocused: Bool
     @AccessibilityFocusState private var isTitleFocused: Bool
     
@@ -19,6 +21,11 @@ struct FlightsView: View {
                 .accessibilityFocused($isTitleFocused)
                 .padding(.horizontal)
             content
+        }
+        .task(id: moreRequest) {
+            guard moreRequest > handledMoreRequest else { return }
+            handledMoreRequest = moreRequest
+            await viewModel.loadMore()
         }
         // The nav bar keeps its name (UI tests) but the heading above is the visible title.
         .navigationTitle(Text("Salidas de \(viewModel.airport.iataCode)"))
@@ -61,17 +68,15 @@ struct FlightsView: View {
     @ViewBuilder private var moreRow: some View {
         switch viewModel.more {
         case .available:
-            // Its own branch, so every page brings a fresh row that triggers the next load. An
-            // unstructured Task: a `.task` would be cancelled when the row turns into `.loading`.
-            pagingIndicator
-                .onAppear { Task { await viewModel.loadMore() } }
+            Button("Cargar más salidas") { moreRequest += 1 }
+                .frame(maxWidth: .infinity, minHeight: 44)
         case .loading:
             pagingIndicator
         case .failed(let message):
             VStack(spacing: 8) {
                 Text(message)
                     .multilineTextAlignment(.center)
-                Button("Reintentar") { Task { await viewModel.loadMore() } }
+                Button("Reintentar") { moreRequest += 1 }
                     .frame(minHeight: 44)
             }
             .frame(maxWidth: .infinity)

@@ -53,7 +53,7 @@ El trabajo se organiza en historias de usuario de una línea, como [issues con l
 | [#2](https://github.com/aarcala10/aviation/issues/2) | Volver a ver las salidas de un aeropuerto es instantáneo (caché) | ✅ |
 | [#3](https://github.com/aarcala10/aviation/issues/3) | Ver los vuelos que salen de un aeropuerto | ✅ |
 | [#4](https://github.com/aarcala10/aviation/issues/4) | Ver el detalle de un vuelo | ✅ |
-| [#5](https://github.com/aarcala10/aviation/issues/5) | Cargar más vuelos al hacer scroll (paginación) | ✅ |
+| [#5](https://github.com/aarcala10/aviation/issues/5) | Cargar más vuelos con un botón (paginación) | ✅ |
 
 Los planes que se han llevado a cabo, uno por historia (criterios de aceptación, fuera de alcance y lista de tests), están en [`docs/plans/`](docs/plans): [plan1](docs/plans/plan1.md), [plan2](docs/plans/plan2.md), [plan3](docs/plans/plan3.md), [plan4](docs/plans/plan4.md) y [plan5](docs/plans/plan5.md).
 
@@ -68,7 +68,7 @@ flowchart LR
     C --> D{"¿En caché<br/>< 5 min?"}
     D -->|sí| E["🛫 Salidas<br/>agrupadas por día"]
     D -->|no| F["Aviationstack<br/>/v1/flights"] --> E
-    E -->|scroll al final| G["Página siguiente<br/>(100 vuelos)"] --> E
+    E -->|"Cargar más salidas"| G["Página siguiente<br/>(100 vuelos)"] --> E
     E --> H["📋 Detalle del vuelo"]
 ```
 
@@ -179,7 +179,7 @@ La decodificación es **tolerante**: un vuelo ilegible se descarta sin perder el
 
 ### Paginación
 
-Páginas de 100 vuelos. Si una página trae menos, era la última. Si una página solo trae códigos compartidos o vuelos repetidos, se pide la siguiente para que la lista siempre crezca.
+Páginas de 100 vuelos que se piden solo al pulsar «Cargar más salidas»: con el orden de la API una carga automática se encadenaba y gastaba la cuota. Si una página trae menos, era la última. Si una página solo trae códigos compartidos o vuelos repetidos, se pide la siguiente para que la lista siempre crezca.
 
 > **Ojo: la API gratuita no pagina en orden.** `/v1/flights` devuelve las entradas en un orden interno, no por hora de salida: una página de MAD traía 15:00, 10:30, 12:20, 10:25… y después 17:05 → 16:20. Por eso una página nueva trae vuelos anteriores *y* posteriores, y como la lista ordena por hora dentro de cada día, algunos aparecen por encima de los que ya se veían. En el plan gratuito no hay forma de evitarlo: no existe parámetro de orden, `flight_date` y `dep_scheduled_time_dep` devuelven `function_access_restricted`, y `/v1/timetable` (que sí viene ordenado) solo admite 1 petición por minuto.
 
@@ -223,7 +223,8 @@ sequenceDiagram
 - `loadedAttempt` evita recargar al volver del detalle, porque la `.task` se reinicia cuando la vista reaparece.
 
 **Cargar más**
-- La fila final lanza un `Task { await viewModel.loadMore() }` en `onAppear`. Es una tarea **no estructurada** a propósito: una `.task` pertenecería a la fila y se cancelaría en cuanto la fila pasa a mostrar «cargando».
+- El botón «Cargar más salidas» (y «Reintentar» si falla) incrementa `moreRequest` y una `.task(id: moreRequest)` llama a `loadMore()`. Es una tarea **estructurada**: SwiftUI la cancela al salir de la pantalla. `handledMoreRequest` evita repetir la carga cuando la `.task` se reinicia al volver del detalle.
+- `loadMore()` comprueba `Task.isCancelled` tras cada `await`: si se cancela, deja `more = .available` y no pide más páginas ni muestra error.
 - Si mientras tanto empieza un `load()` nuevo (un reintento), `generation` cambia y la página que llega tarde se descarta.
 
 ---

@@ -114,12 +114,31 @@ struct FlightsViewModelTests {
         await vm.load()
         let first = Task { await vm.loadMore() }
         await waitForCalls(2, on: repo)
-        let second = Task { await vm.loadMore() }
-        try? await Task.sleep(for: .milliseconds(50))
+        await Task { await vm.loadMore() }.value
         await gate.open()
         await first.value
-        await second.value
         #expect(await offsets(repo) == [0, 100])
+    }
+    
+    @Test("loadMore_cancelled_stopsRequestingPages", .timeLimit(.minutes(1)))
+    func loadMore_cancelled_stopsRequestingPages() async {
+        let page1 = page(100, prefix: "A")
+        let gate = Gate()
+        let repo = MockFlightRepository { call in
+            if call.offset == 0 { return page1 }
+            await gate.wait()
+            return page1
+        }
+        let vm = makeVM(repo)
+        await vm.load()
+        let task = Task { await vm.loadMore() }
+        await waitForCalls(2, on: repo)
+        task.cancel()
+        await gate.open()
+        await task.value
+        #expect(await offsets(repo) == [0, 100])
+        #expect(vm.more == .available)
+        #expect(vm.state == .loaded(page1))
     }
     
     @Test("loadMore_lastPage_stopsRequesting")

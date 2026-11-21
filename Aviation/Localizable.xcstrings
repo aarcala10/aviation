@@ -119,6 +119,9 @@
     "No se ha podido completar la búsqueda" : {
       "extractionState" : "manual"
     },
+    "Cargar más salidas" : {
+      "extractionState" : "manual"
+    },
     "Cargando más salidas" : {
       "extractionState" : "manual"
     },
@@ -164,6 +167,12 @@
     "Se ha agotado la cuota de la API" : {
       "extractionState" : "manual"
     },
+    "Sin número" : {
+      "extractionState" : "manual"
+    },
+    "sin número" : {
+      "extractionState" : "manual"
+    },
     "Sin dato" : {
       "extractionState" : "manual"
     },
@@ -176,12 +185,12 @@
     "Vuelo" : {
       "extractionState" : "manual"
     },
-    "Vuelo %@, %@. A %@.%@. %@%@." : {
+    "Vuelo %@, %@. A %@. %@. %@%@." : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Vuelo %1$@, %2$@. A %3$@.%4$@. %5$@%6$@."
+            "value" : "Vuelo %1$@, %2$@. A %3$@. %4$@. %5$@%6$@."
           }
         }
       }

@@ -64,6 +64,10 @@ final class FlightsViewModel {
             while !added {
                 let page = try await getDepartures(from: airport.iataCode, offset: offset)
                 guard mine == generation else { return }
+                guard !Task.isCancelled else {
+                    more = .available
+                    return
+                }
                 let fresh = page.flights.filter { known.insert($0.id).inserted }
                 shown += fresh
                 added = !fresh.isEmpty
@@ -75,6 +79,10 @@ final class FlightsViewModel {
             more = nextOffset == nil ? .complete : .available
         } catch {
             guard mine == generation else { return }
+            guard !Task.isCancelled, !(error is CancellationError) else {
+                more = .available
+                return
+            }
             more = .failed(
                 SearchViewModel.message(
                     for: error, generic: String(localized: "No se han podido cargar más salidas")))
