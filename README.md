@@ -75,7 +75,7 @@ flowchart LR
 | 1. Busca | 2. Elige el aeropuerto | 3. Abre un vuelo |
 |---|---|---|
 | <img src="Screenshots/search.png" width="220" alt="Búsqueda"> | <img src="Screenshots/departures.png" width="220" alt="Salidas"> | <img src="Screenshots/detail.png" width="220" alt="Detalle"> |
-| Por nombre, ciudad o código IATA, sin distinguir mayúsculas ni acentos. El código exacto sale primero (máximo 50 resultados). | Salidas agrupadas por día, el más reciente primero. Al llegar al final se carga la página siguiente. | Ruta, estado y las secciones Salida, Llegada y Vuelo (terminal, puerta, horas y retraso). |
+| Por nombre, ciudad o código IATA, sin distinguir mayúsculas ni acentos. Salen primero el código exacto y la ciudad exacta (máximo 50 resultados). | Salidas agrupadas por día, el más reciente primero. El botón «Cargar más salidas» pide la página siguiente. | Ruta, estado y las secciones Salida, Llegada y Vuelo (terminal, puerta, horas y retraso). |
 
 - **Búsqueda sin red:** lee `Aviation/Data/Airports/airports.json`, incluido en la app. Se generó a partir de [OurAirports](https://ourairports.com/data/) (dominio público) con estos filtros: `iata_code` no vacío, `type` en `large_airport`, `medium_airport` o `small_airport`, y `scheduled_service = yes`. Es un JSON compacto `{n, c, i, k}` (nombre, ciudad, IATA y país ISO). El país se muestra en español con `Locale`. Los nombres de ciudad se tradujeron a español ("Lisboa", "Londres", "Roma") y los resultados salen ordenados: código exacto, ciudad exacta y el resto.
 - **Salidas:** `GET https://api.aviationstack.com/v1/flights?dep_iata=XXX&limit=100&offset=N`.
